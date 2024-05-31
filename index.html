@@ -5,10 +5,11 @@
 <title>bcnn</title>
 <style>
 	/*Effects to text itself*/
-	body {font-family: Helvetica, Arial}
+	body {font-family: Helvetica, Arial;}
 	h1 {font-size: 50px; text-align: center;  line-height: 10px; text-shadow: 2.5px 0 #000000;}
 	h2 {color:rgba(54,54,54,1.00);}
 	h3 {color:rgba(115,115,115,1.00);}
+	a {text-decoration: none;}
 	body {background-color:rgba(232,218,213,1.00);}
 	#intro_text {color:rgba(255,0,4,1.00); text-align: center; text-decoration: underline}
 	.sample_text {color:rgba(126,126,126,1.00);}
@@ -18,22 +19,57 @@
 		position:relative; top: 200px}
 	#pageheader {margin:auto; border: 2px solid rgba(255,171,117,1.00); background-color: rgba(255,171,117,1.00)}
 	/*Images*/
-	#rainbow-with-church {max-width:17%; float:left; margin:10px}
+	#rainbow-with-church {max-width:200px; float:left; margin:10px}
 	/*Graphics*/
-	.title {background:rgba(255,137,0,1.00); width:100%; height:100px; position:absolute; left:0px; top:0px;
-		font-size: 60px; text-align: center;  line-height: 100px; text-shadow: 3.5px 0 #000000;}
-	.choice {background:rgba(255,137,0,1.00); width:100px; height:75px; position:absolute; letf:0px; top:102px}
+	.title {
+		background:rgba(255,137,0,1.00); 
+		width:100%; height:100px; 
+		position:fixed; 
+		left:0px; 
+		top:0px;
+		font-size: 60px; 
+		text-align: center;  
+		line-height: 100px; 
+		text-shadow: 3.5px 0 #000000;
+		z-index:10
+	}
+	.choice {
+    	background: rgba(255,137,0,1.00);
+    	width: 100%;
+    	height: 50px;
+    	position: fixed;
+    	letf: 0px;
+    	top: 102px;
+    	left: 0px;
+		z-index: 10
+	}
+	.tab
+	{
+		color:black;
+		width:200px;
+		height:50px;
+		text-align:center;
+		position: fixed;
+		z-index: 10;
+		transform:scale(1,2.0);
+		font-size:20px;
+		text-decoration: none;
+		cursor:pointer;
+	}
 </style>
 <link href="bcnn.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<div class="title">BCNN</div>
-	<div class="newsshort">
-	<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
-	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
-		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
-	</div>
+	<div class="choice"></div>
+	<a href="https://bcnnofficial.github.io/need-to-know/">
+		<div class="newsshort">
+		<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
+		<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
+			<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
+		</div>
+	</a>
 	<br>
 	<div class="newsshort">
 	<img id="rainbow-with-church" src="https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/20220914_184735.jpg" alt="God church">
@@ -41,27 +77,52 @@
 	<h3>17 July 2033, 12:01 pm E1MDT, Theromy Theoromy</h3>
 		<p class="sample_text">In a surprise press conference hosted by God himself, God declares the possibility that there might have to be a new flood. "I say this with heavy heart," says God in front of a crowd of select guests and broadcasters, "but there is simply too much corruption on this Earth." He named various organizations he felt contributed to this corruption, several of which were BCNN or its subsidaries...</p>
 	</div>
+	<br>
+	<div class="newsshort">
+	<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
+	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
+		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
+	</div>
+	<br>
+	<div class="newsshort">
+	<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
+	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
+		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
+	</div>
+	<br>
+	<div class="newsshort">
+	<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
+	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
+		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
+	</div>
+	<br>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
 		//$("h1").text("BUST");
-		console.log(window.innerWidth)
-		console.log(typeof window.innerWidth)
+		//console.log(window.innerWidth)
+		//console.log(typeof window.innerWidth)
 		var totalWidth = window.innerWidth
-		console.log(totalWidth)
+		//console.log(totalWidth)
 		var tabWidth = (totalWidth)/6
-		console.log(tabWidth)
+		//console.log(tabWidth)
 		var tabs = ["Need to Know", "Happening NOW", "Topics", "Find a Story", "Sources", "About BCNN"]
+		var links = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/happening-NOW/", "https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/need-to-know/"]
 		for (var i = 0; i < tabs.length; i++)
 		{
+			var tablink = document.createElement("a")
+			tablink.href = links[i];
+			document.body.appendChild(tablink)
+			
 			var tab = document.createElement("div");
-			tab.className = "choice";
-			document.body.appendChild(tab);
+			tab.className = "tab";
+			//document.body.appendChild(tab);
+			tablink.appendChild(tab);
 			tab.style.width = tabWidth + "px";
-			console.log(tab.style.width)
-			tab.style.left = ((tabWidth + 1)*i) + "px";
-			//tab.textContent = tabWidth[i];
-			console.log("Loop iteration #" + i)
+			tab.style.left = ((i)*tabWidth) + "px";
+			tab.style.top = "128px";
+			tab.innerHTML = tabs[i];
 		}
 	</script>
+	<div class = "tab" style="width:#; left:#; top:#;">#</div>
 </body>
 </html>
