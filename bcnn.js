@@ -6,9 +6,12 @@ function loadHead ()
 	//$("h1").text("BUST");
 	//console.log(window.innerWidth)
 	//console.log(typeof window.innerWidth)
-	var title = document.createElement("div");
+	var title = document.createElement("div"); //have this be an element of a hyperlink that takes one back to the main page
 	title.className = "title";
-	document.body.appendChild(title);
+	var titlelink = document.createElement("a");
+	titlelink.href = "https://bcnnofficial.github.io";
+	document.body.appendChild(titlelink);
+	titlelink.appendChild(title);
 	title.innerHTML = "BCNN";
 	var choice = document.createElement("div");
 	choice.className = "choice";
@@ -30,6 +33,7 @@ function loadHead ()
 		//document.body.appendChild(tab);
 		tablink.appendChild(tab);
 		tab.style.width = tabWidth + "px";
+		tab.style.height = "50px";
 		tab.style.left = ((i)*tabWidth) + "px";
 		tab.style.top = "128px";
 		tab.innerHTML = tabs[i];
