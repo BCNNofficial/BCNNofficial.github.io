@@ -85,9 +85,6 @@ div.choice span
 {
 	display:table-cell;
 	text-align: center;
-}
-div.choice span a
-{
 	font-size:40px;
 	font-stretch:condensed;
 }
@@ -112,7 +109,7 @@ div.choice span a
 		display:none;
 	}
 }
-@media (max-width:500px)
+@media (max-width:550px)
 {
 	#t3
 	{
