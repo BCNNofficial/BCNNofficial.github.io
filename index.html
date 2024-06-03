@@ -1,59 +1,170 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>BCNN</title>
-<link href="https://bcnnofficial.github.io/bcnn.css" rel="stylesheet" type="text/css"><!--In actual site link to https://bcnnofficial.github.io/bcnn.css not to bcnn.css-->
-</head>
-
-<body>
-	<div class="title">BCNN</div>
-<div class="tabs"></div>
-	<div class="more">More</div>
-	<div class="choice">
-		<span id="t1"><a href="#">Need to Know</a></span>
-		<span id="t2"><a href="#">Topics</a></span>
-		<span id="t3"><a href="#">Find a Story</a></span>
-		<span id="t4"><a href="#">Sources</a></span>
-		<span id="t5"><a href="#">About BCNN</a></span>
-	</div>
-	<a href="https://bcnnofficial.github.io/p-ball-announces-new-word-added-to-book/">
-		<div class="newsshort">
-		<h2>BREAKING NEWS: Phillip Ball announces new word added to book</h2>
-		<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
-			<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
-		</div>
-	</a>
-	<br>
-	<div class="newsshort">
-	<img id="rainbow-with-church" src="https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/20220914_184735.jpg" alt="God church">
-	<h2>DIVINE UPDATES: God announces potential for new flood</h2>
-	<h3>17 July 2033, 12:01 pm E1MDT, Theromy Theoromy</h3>
-		<p class="sample_text">In a surprise press conference hosted by God himself, God declares the possibility that there might have to be a new flood. "I say this with heavy heart," says God in front of a crowd of select guests and broadcasters, "but there is simply too much corruption on this Earth." He named various organizations he felt contributed to this corruption, several of which were BCNN or its subsidaries...</p>
-	</div>
-	<br>
-	<div class="newsshort">
-	<h2>A TEST</h2>
-	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
-		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
-	</div>
-	<br>
-	<div class="newsshort">
-	<h2>TEST</h2>
-	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
-		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
-	</div>
-	<br>
-	<div class="newsshort">
-	<h2>ANTOTHER TEST</h2>
-	<h3>18 July 2033, 6:23 pm E1MDT, Jomeranio Mann</h3>
-		<p class="sample_text">On the 18th of July 2033, this BCNN reporter witnessed somethings revolutionary. For the first time in 8 months, Phillip left his house. And it wasn't just to brutalize his fans like times in the past (though that still happened). He left his house to announce that he has officially added another word to his book. The reaction of the crowd was like nothing I'd ever...</p>
-	</div>
-	<br>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://bcnnofficial.github.io/bcnn.js not to bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
-	<script>
-		
-	</script>
-</body>
-</html>
+@charset "utf-8";
+/*Effects to text itself*/
+body 
+{
+	font-family: Helvetica, Arial;
+}
+h2 
+{
+	color:rgba(54,54,54,1.00);
+}
+h3 
+{
+	color:rgba(115,115,115,1.00);
+}
+a 
+{
+	text-decoration: none;
+}
+body 
+{
+	background-color:rgba(232,218,213,1.00);
+}
+/*Effects to types of text*/
+#intro_text 
+{
+	color:rgba(255,0,4,1.00); 
+	text-align: center; 
+	text-decoration: underline
+}
+.sample_text 
+{
+	color:rgba(126,126,126,1.00);
+}
+.italictext 
+{
+	font-style: italic;
+}
+.title_text 
+{
+	color:rgba(0,0,0,1.1); 
+	font-size:50px
+}
+.informers 
+{
+	color:rgba(30,12,4,1.00); 
+	line-height:30px; 
+	font-size: 18px
+}
+/*Effects to groupings of text*/
+.newsshort 
+{
+	width: 90%; 
+	margin: auto; 
+	border: 2px solid rgba(200,200,200,1); 
+	border-top: 6px solid rgba(200,200,200,1);
+	position:relative; top: 200px
+}
+.totalinformer 
+{
+	margin:auto; 
+	position:relative; 
+	top: 150px
+}
+#pageheader 
+{
+	margin:auto; 
+	border: 2px solid rgba(255,171,117,1.00); 
+	background-color: rgba(255,171,117,1.00)
+}
+/*Images*/
+#rainbow-with-church 
+{
+	max-width:200px; 
+	float:left; 
+	margin:10px
+}
+/*Graphics*/
+div.choice
+{
+	display:table;
+	width:80%;
+	table-layout:fixed;
+}
+div.choice span
+{
+	display:table-cell;
+	text-align: center;
+	font-size:40px;
+	font-stretch:condensed;
+}
+@media (max-width:1310px)
+{
+	#t5
+	{
+		display:none;
+	}
+}
+@media (max-width:1050px)
+{
+	#t1
+	{
+		display:none;
+	}
+}
+@media (max-width:700px)
+{
+	#t4
+	{
+		display:none;
+	}
+}
+@media (max-width:550px)
+{
+	#t3
+	{
+		display:none;
+	}
+}
+@media (max-width:400px)
+{
+	#t2
+	{
+		display:none;
+	}
+}
+.title {
+	color:black;
+	background:rgba(255,137,0,1.00); 
+	width:100%; height:100px; 
+	position:fixed; 
+	left:0px; 
+	top:0px;
+	font-size: 60px; 
+	text-align: center;  
+	line-height: 100px; 
+	text-shadow: 3.5px 0 #000000;
+	z-index:10
+}
+.choice {
+	background: rgba(255,137,0,1.00);
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	letf: 0px;
+	top: 102px;
+	left: 10%;
+	z-index: 10;
+}
+.tabs
+{
+	background: rgba(255,137,0,1.00);
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	letf: 0px;
+	top: 102px;
+	left: 0px;
+	z-index: 10;
+}
+.more
+{
+	position:fixed;
+	font-size:20px;
+	margin: 50px 25px;
+	border:2px solid rgba(0,0,0,1);
+	z-index:11;
+	top:62.5px;
+	left:calc(100% - 100px);
+	cursor:pointer;
+}
