@@ -4,24 +4,76 @@ body
 {
 	font-family: Helvetica, Arial;
 }
-/*h1 {font-size: 50px; text-align: center;  line-height: 10px; text-shadow: 2.5px 0 #000000;}*/
-h2 {color:rgba(54,54,54,1.00);}
-h3 {color:rgba(115,115,115,1.00);}
-a {text-decoration: none;}
-body {background-color:rgba(232,218,213,1.00);}
+h2 
+{
+		color:rgba(54,54,54,1.00);
+}
+h3 
+{
+	color:rgba(115,115,115,1.00);
+}
+a 
+{
+	text-decoration: none;
+}
+body 
+{
+	background-color:rgba(232,218,213,1.00);
+}
 /*Effects to types of text*/
-#intro_text {color:rgba(255,0,4,1.00); text-align: center; text-decoration: underline}
-.sample_text {color:rgba(126,126,126,1.00);}
-.italictext {font-style: italic;}
-.title_text {color:rgba(0,0,0,1.1); font-size:50px}
-.informers {color:rgba(30,12,4,1.00); line-height:30px; font-size: 18px}
+#intro_text 
+{
+	color:rgba(255,0,4,1.00); 
+	text-align: center; 
+	text-decoration: underline
+}
+.sample_text 
+{
+	color:rgba(126,126,126,1.00);
+}
+.italictext 
+{
+	font-style: italic;
+}
+.title_text 
+{
+	color:rgba(0,0,0,1.1); 
+	font-size:50px
+}
+.informers 
+{
+	color:rgba(30,12,4,1.00); 
+	line-height:30px; 
+	font-size: 18px
+}
 /*Effects to groupings of text*/
-.newsshort {width: 90%; margin: auto; border: 2px solid rgba(200,200,200,1); border-top: 6px solid rgba(200,200,200,1);
-	position:relative; top: 200px}
-.totalinformer {margin:auto; position:relative; top: 150px}
-#pageheader {margin:auto; border: 2px solid rgba(255,171,117,1.00); background-color: rgba(255,171,117,1.00)}
+.newsshort 
+{
+	width: 90%; 
+	margin: auto; 
+	border: 2px solid rgba(200,200,200,1); 
+	border-top: 6px solid rgba(200,200,200,1);
+	position:relative; top: 200px
+}
+.totalinformer 
+{
+	margin:auto; 
+	position:relative; 
+	top: 150px
+}
+#pageheader 
+{
+	margin:auto; 
+	border: 2px solid rgba(255,171,117,1.00); 
+	background-color: rgba(255,171,117,1.00)
+}
 /*Images*/
-#rainbow-with-church {max-width:200px; float:left; margin:10px}
+#rainbow-with-church 
+{
+	max-width:200px; 
+	float:left; 
+	margin:10px
+}
 /*Graphics*/
 div.choice
 {
