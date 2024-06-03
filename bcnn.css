@@ -1,6 +1,9 @@
 @charset "utf-8";
 /*Effects to text itself*/
-body {font-family: Helvetica, Arial;}
+body 
+{
+	font-family: Helvetica, Arial;
+}
 /*h1 {font-size: 50px; text-align: center;  line-height: 10px; text-shadow: 2.5px 0 #000000;}*/
 h2 {color:rgba(54,54,54,1.00);}
 h3 {color:rgba(115,115,115,1.00);}
@@ -20,6 +23,57 @@ body {background-color:rgba(232,218,213,1.00);}
 /*Images*/
 #rainbow-with-church {max-width:200px; float:left; margin:10px}
 /*Graphics*/
+div.choice
+{
+	display:table;
+	width:80%;
+	table-layout:fixed;
+}
+div.choice span
+{
+	display:table-cell;
+	text-align: center;
+}
+div.choice span a
+{
+	font-size:40px;
+	font-stretch:condensed;
+}
+@media (max-width:1000px)
+{
+	#t5
+	{
+		display:none;
+	}
+}
+@media (max-width:900px)
+{
+	#t1
+	{
+		display:none;
+	}
+}
+@media (max-width:800px)
+{
+	#t4
+	{
+		display:none;
+	}
+}
+@media (max-width:700px)
+{
+	#t3
+	{
+		display:none;
+	}
+}
+@media (max-width:600px)
+{
+	#t2
+	{
+		display:none;
+	}
+}
 .title {
 	color:black;
 	background:rgba(255,137,0,1.00); 
@@ -40,19 +94,28 @@ body {background-color:rgba(232,218,213,1.00);}
 	position: fixed;
 	letf: 0px;
 	top: 102px;
-	left: 0px;
-	z-index: 10
-}
-.tab
-{
-	color:black;
-	width:200px;
-	height:50px;
-	text-align:center;
-	position: fixed;
+	left: 10%;
 	z-index: 10;
-	transform:scale(1,2.0);
+}
+.tabs
+{
+	background: rgba(255,137,0,1.00);
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	letf: 0px;
+	top: 102px;
+	left: 0px;
+	z-index: 10;
+}
+.more
+{
+	position:fixed;
 	font-size:20px;
-	text-decoration: none;
+	margin: 50px 25px;
+	border:2px solid rgba(0,0,0,1);
+	z-index:11;
+	top:62.5px;
+	left:93%;
 	cursor:pointer;
 }
