@@ -88,6 +88,11 @@ div.choice span
 	font-size:40px;
 	font-stretch:condensed;
 }
+div.choice span 
+{
+	font-size:40px;
+	font-stretch:condensed;
+}
 @media (max-width:1310px)
 {
 	#t5
@@ -109,7 +114,7 @@ div.choice span
 		display:none;
 	}
 }
-@media (max-width:550px)
+@media (max-width:500px)
 {
 	#t3
 	{
@@ -167,4 +172,14 @@ div.choice span
 	top:62.5px;
 	left:calc(100% - 100px);
 	cursor:pointer;
+}
+.topics-tab
+{
+	position:fixed;
+	font-size:22px;
+	line-height: 30px;
+	margin: auto;
+	border:3px solid rgba(0,0,0,1);
+	background:rgba(255,194,117,1.00);
+	z-index: 12;
 }
