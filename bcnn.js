@@ -89,7 +89,7 @@ function Initiate()
 {
 	//add header stuff
 	var content = "";
-	content += "<div class='title'>BCNN</div>";
+	content += "<div class='title'><a href='https://bcnnofficial.github.io'>BCNN</a></div>";
 	
 	content += "<div class='tabs'></div>";
 	
