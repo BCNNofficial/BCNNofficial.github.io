@@ -91,6 +91,8 @@ function Initiate()
 	var content = "";
 	content += "<div class='title'><a href='https://bcnnofficial.github.io'>BCNN</a></div>";
 	
+	content += "<div class='top-back'></div>";
+	
 	content += "<div class='tabs'></div>";
 	
 	content += "<div class='more' onclick='OpenSideMenu ()'>More</div>";
