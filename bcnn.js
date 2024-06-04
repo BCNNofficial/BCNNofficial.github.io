@@ -93,7 +93,7 @@ function Initiate()
 	
 	content += "<div class='tabs'></div>";
 	
-	content += "<div class='more'>More</div>";
+	content += "<div class='more' onclick='OpenSideMenu ()'>More</div>";
 	
 	content += "<div class='choice'>";
 	
@@ -112,3 +112,76 @@ function Initiate()
 	T2.addEventListener("mouseout", function() {MoveFromT2();});
 }
 
+var sidemenuMain = ["Need to Know <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "Happening NOW<br>", "Topics <div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "Find a Story<br>", "Sources<br>", "About BCNN<br>"]
+
+
+var sidemenuSB0 = ["&emsp;Would like to know<br>"]; var SB0Open = 0;
+var sidemenuSB2 = ["&emsp;Business Prison<br>", "&emsp;Prison Planet<br>", "&emsp;Earth 3<br>", "&emsp;Phillip Ball <br>"]; var SB2Open = 0;
+
+var sidemenuopened = 0;
+
+function OpenSideMenu ()
+{
+	if (sidemenuopened === 0)
+	{
+		console.log("OpenSideMenu function entered")
+		var sidemenu = document.createElement("div");
+		document.body.appendChild(sidemenu);
+
+		for (var i = 0; i < sidemenuMain.length; i++)
+		{
+			console.log("Main loop iteration " + i)
+			var myTab = document.createElement("span")
+			sidemenu.appendChild(myTab);
+			myTab.innerHTML = sidemenuMain[i];
+			myTab.className = "sb"+i;
+		}
+
+		sidemenu.className = "side-menu";
+
+		var exitbutton = document.createElement("div")
+		sidemenu.appendChild(exitbutton);
+		exitbutton.innerHTML = "<img class='exit-button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='exit'>"
+		exitbutton.addEventListener("click", function() {$(".side-menu").remove(); sidemenuopened = 0;})
+	}
+}
+function ExpandSB0()
+{
+	console.log("ExpandSB0 function entered")
+	if (SB0Open === 0)
+	{
+		for (var i = 0; i < sidemenuSB0.length; i++)
+		{
+			console.log("SB0 loop iteration " + i)
+			var myTab = document.createElement("span");
+			myTab.classList.add = "sb0sub";
+			$("<span class='sb0sub'>"+sidemenuSB0[i]+"</span>").insertAfter(".sb0");
+			SB0Open = 1;
+		}
+	}
+	else if (SB0Open === 1)
+	{
+		$(".sb0sub").remove();
+		SB0Open = 0;
+	}
+}
+function ExpandSB2()
+{
+	console.log("ExpandSB2 function entered")
+	if (SB2Open === 0)
+	{
+		for (var i = 0; i < sidemenuSB2.length; i++)
+		{
+			console.log("SB2 loop iteration " + i)
+			var myTab = document.createElement("span");
+			myTab.classList.add = "sb2sub";
+			$("<span class='sb2sub'>"+sidemenuSB2[i]+"</span>").insertAfter(".sb2");
+			SB2Open = 1;
+		}
+	}
+	else if (SB2Open === 1)
+	{
+		$(".sb2sub").remove();
+		SB2Open = 0;
+	}
+}
