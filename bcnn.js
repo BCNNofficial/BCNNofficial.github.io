@@ -1,41 +1,114 @@
-function loadHead ()
-{
-	$(".tab").remove();
-	$(".title").remove();
-	$(".choice").remove();
-	//$("h1").text("BUST");
-	//console.log(window.innerWidth)
-	//console.log(typeof window.innerWidth)
-	var title = document.createElement("div"); //have this be an element of a hyperlink that takes one back to the main page
-	title.className = "title";
-	var titlelink = document.createElement("a");
-	titlelink.href = "https://bcnnofficial.github.io";
-	document.body.appendChild(titlelink);
-	titlelink.appendChild(title);
-	title.innerHTML = "BCNN";
-	var choice = document.createElement("div");
-	choice.className = "choice";
-	document.body.appendChild(choice);
-	var totalWidth = window.innerWidth;
-	//console.log(totalWidth)
-	var tabWidth = (totalWidth)/6;
-	//console.log(tabWidth)
-	var tabs = ["Need to Know", "Happening NOW", "Topics", "Find a Story", "Sources", "About BCNN"];
-	var links = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/happening-NOW/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"];
-	for (var i = 0; i < tabs.length; i++)
-	{
-		var tablink = document.createElement("a");
-		tablink.href = links[i];
-		document.body.appendChild(tablink);
+var alltabs = ["Need to Know", "Topics", "Find a Story", "Sources", "About BCNN"];
+var alltabslinks = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"]
 
-		var tab = document.createElement("div");
-		tab.className = "tab";
-		//document.body.appendChild(tab);
-		tablink.appendChild(tab);
-		tab.style.width = tabWidth + "px";
-		tab.style.height = "50px";
-		tab.style.left = ((i)*tabWidth) + "px";
-		tab.style.top = "128px";
-		tab.innerHTML = tabs[i];
-	}
+var T2Tabs = ["Phillip Ball", "Earth 3", "Business Prison", "Prison Planet"];
+var T2TabsL = ["#", "#", "#", "#"];
+
+var overT2 = 0;
+var overT2Tab = 0;
+var T2TabExists = 0;
+
+var xPos = 0;
+var yPos = 0;
+
+function onMouseMove(e)
+{
+	//console.log("BUST");
+	console.log(e);
+	xPos = e.clientX;
+	yPos = e.clientY;
 }
+
+function getXMousePos (e)
+{
+	return e.clientX;
+}
+function getYMousePos (e)
+{
+	return e.clientY;
+}
+
+function OpenTab ()
+{
+	//console.log("Entered if statement");
+	var topicTabs = document.createElement("div");
+	//topicTabs.classname = "topics-tab";
+	document.body.appendChild(topicTabs);
+
+	for (var i = 0; i < T2Tabs.length; i++)
+	{
+		topicTabs.innerHTML += "<a href=\""+T2TabsL[i]+"\">"+T2Tabs[i]+"</a><br>";
+	}
+
+	topicTabs.classList.add("topics-tab");
+	
+	topicTabs.style.top = (yPos) + "px";
+	topicTabs.style.left = (xPos) + "px";	
+
+	//console.log("divposX: "+topicTabs.style.left);
+	//console.log("divposy: "+topicTabs.style.top);
+
+	topicTabs.addEventListener("mouseover", function() {MoveToT2Tab();});
+	topicTabs.addEventListener("mouseout", function() {MoveFromT2Tab();});
+
+	//topicTabs.innerHTML = "<a href=\""+T4TabsL[0]+"\">"+T2Tabs[1]+"</a><br>"+"<a href=\""+T2TabsL[1]+"\">"+T4Tabs[1]+"</a><br>";
+	
+	T2TabExists = 1;
+}
+
+function MoveToT2 ()
+{
+	overT2 = 1;
+	console.log("overT2: "+overT2);
+	setTimeout(function(e) {if (overT2Tab === 0 && T2TabExists === 0){OpenTab(e);}}, 1000);
+}
+function MoveToT2Tab ()
+{
+	overT2Tab = 1;
+	console.log("overT2Tab: "+overT2Tab);
+}
+function MoveFromT2 ()
+{
+	overT2 = 0;
+	console.log("overT2: "+overT2);
+	setTimeout(function(){if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove(); T2TabExists = 0;}}, 1000)
+	//if (overT2 === 0 && overT2Tab === 0)
+	//{
+	//	$(".topics-tab").remove();	
+	//}
+}
+function MoveFromT2Tab ()
+{
+	overT2Tab = 0;
+	console.log("overT2Tab: "+overT2Tab);
+	setTimeout(function(){if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove(); T2TabExists = 0;}}, 1000)
+	//if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove();}
+}
+
+function Initiate()
+{
+	//add header stuff
+	var content = "";
+	content += "<div class='title'>BCNN</div>";
+	
+	content += "<div class='tabs'></div>";
+	
+	content += "<div class='more'>More</div>";
+	
+	content += "<div class='choice'>";
+	
+	for (var i = 0; i < alltabs.length; i++)
+	{
+		var myNumber = i+1;
+		content += "<span id='t"+myNumber+"'><div id='t"+myNumber+"Div'><a href="+alltabslinks[i]+">"+alltabs[i]+"</a></div></span>";
+	}
+	
+	content += "</div>";
+	
+	document.body.innerHTML += content;
+	
+	var T2 = document.getElementById("t2Div");
+	T2.addEventListener("mouseover", function(e) {onMouseMove(e); MoveToT2();});
+	T2.addEventListener("mouseout", function() {MoveFromT2();});
+}
+
