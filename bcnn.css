@@ -114,11 +114,15 @@ div.choice span
 		display:none;
 	}
 }
-@media (max-width:500px)
+@media (max-width:550px)
 {
 	#t3
 	{
 		display:none;
+	}
+	.side-menu
+	{
+		width:100%;
 	}
 }
 @media (max-width:400px)
@@ -182,4 +186,45 @@ div.choice span
 	border:3px solid rgba(0,0,0,1);
 	background:rgba(255,194,117,1.00);
 	z-index: 12;
+}
+@media (min-width: 550px), (width:550px)
+{
+	.side-menu
+	{
+		width:500px;
+	}
+}
+.side-menu
+{
+	z-index: 13;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	margin:auto;
+	border:5px solid rgba(0,0,0,1);
+	background: rgba(255,191,192,1.00);
+	font-size:30px;
+	line-height:45px;
+	color:black;
+}
+.button
+{
+	height:30px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.button-div
+{
+	display:inline-block;
+}
+.exit-button
+{
+	z-index: 15;
+	height:30px;
+	vertical-align: middle;
+	cursor: pointer;
+	position:fixed;
+	top:15px;
+	left:460px;
 }
