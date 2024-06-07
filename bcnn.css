@@ -1,4 +1,9 @@
 @charset "utf-8";
+@font-face
+{
+	font-family: 'Franklin Gothic';
+	src: url(https://github.com/BCNNofficial/BCNNofficial.github.io/raw/main/FRAMDCN.TTF);
+}
 /*Effects to text itself*/
 body 
 {
