@@ -1,8 +1,8 @@
 @charset "utf-8";
 @font-face
 {
-	font-family: 'Franklin Gothic';
-	src: url(https://github.com/BCNNofficial/BCNNofficial.github.io/raw/main/FRAMDCN.TTF);
+	font-family: 'FranklinGothic';
+	src: url(https://github.com/BCNNofficial/BCNNofficial.github.io/raw/main/FRAMDCN.TTF) format('truetype');
 }
 /*Effects to text itself*/
 body 
@@ -92,7 +92,7 @@ div.choice span
 	text-align: center;
 	font-size:30px;
 	font-stretch:condensed;
-	font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial"
+	font-family: "Helvetica","Arial";
 	/*"Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial"*/
 }
 div.choice span div a
@@ -209,6 +209,19 @@ div.title a
 	background:rgba(255,194,117,1.00);
 	z-index: 12;
 }
+.footnote
+{
+	cursor: pointer;
+}
+.footnote-box
+{
+	position:absolute;
+	font-size:15px;
+	line-height:20px;
+	width:360px;
+	border:3px solid rgba(0,0,0,1);
+	background:rgba(255,194,117,1.00);
+}
 @media (min-width: 550px), (width:550px)
 {
 	.side-menu
@@ -249,4 +262,184 @@ div.title a
 	position:fixed;
 	top:15px;
 	left:460px;
+}
+.line
+{
+	align-content: center;
+	width:90%;
+	height:2px;
+	margin:auto;
+	border:2px solid rgba(0,0,0,1);
+}
+/*Headings and text content for topics pages*/
+.topic-preceeder
+{
+	color:#858585;
+}
+@media (max-aspect-ratio: 4/3) /*height longer than width (smaller than 1?)*/
+{
+	.topic-preceeder
+	{
+		font-size:30px;
+		line-height: 40px;
+		position:relative;
+		top:-15px;
+	}
+	.topic-header
+	{
+		font-size:80px;
+		line-height: 50px;
+		position:relative;
+		top:-15px;
+	}
+	.topic-noter
+	{
+		font-size:22px;
+		color:#6b6b6b;
+		line-height: 25px;
+	}
+	.topic-detailer-informer
+	{
+		width:100%;
+		margin:auto;
+		position: relative;
+	}
+	.topic-detailer
+	{
+		text-align: left;
+		width:95%;
+		margin:auto;
+		font-size:30px;
+		color:rgba(61,61,61,1.00)
+		margin:auto;
+		border: 2px solid #000000
+	}
+	.topic-detailer tr th
+	{
+		margin:auto;
+		border: 2px solid #000000;
+		background-color:#ffd5d5;
+	}
+	.topic-stories-collection
+	{
+		width:95%;
+		margin:auto;
+		
+	}
+	.topic-stories-collection .topic-stories
+	{
+		text-align: center;
+		font-size:30px;
+		font-stretch:condensed;
+		font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial";
+	}
+	.topic-storybox
+	{
+		width:75%;
+		height:157px;
+		margin:auto;
+		border: 3px solid rgba(0,0,0,1);
+		position: relative;
+	}
+	.topic-story-section
+	{
+		text-align:center;
+		font-size:35px;
+	}
+	.topic-info
+	{
+		width:95%;
+		margin:auto;
+		font-size:23px;
+		line-height: 35px;
+		text-align: justify;
+		color:#151515;
+	}
+	.topic-subsection-title
+	{
+		font-size:40px;
+		line-height: 80px;
+	}
+}
+@media (min-aspect-ratio: 4/3) /*width longer than height (larger than 1+)*/
+{
+	.topic-preceeder
+	{
+		font-size:40px;
+		line-height: 50px;
+		position:relative;
+		top:-15px;
+	}
+	.topic-header
+	{
+		font-size:100px;
+		line-height: 70px;
+		position:relative;
+		top:-15px;
+	}
+	.topic-noter
+	{
+		font-size: 22px;
+		color:#6b6b6b;
+		line-height: 25px;
+	}
+	.topic-detailer-informer
+	{
+		margin:auto;
+		position: relative;
+	}
+	.topic-detailer
+	{
+		text-align: left;
+		width:70%;
+		font-size:30px;
+		color:rgba(61,61,61,1.00)
+	}
+	.topic-stories-collection
+	{
+		display:table;
+		width:80%;
+		margin:auto;
+		table-layout:fixed;
+	}
+	.topic-stories-collection .topic-stories
+	{
+		display:table-cell;
+		text-align: center;
+		font-size:30px;
+		font-stretch:condensed;
+		font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial"
+	}
+	.topic-storybox
+	{
+		width: 180%;
+		height:157px;
+		margin:auto;
+		border: 3px solid rgba(0,0,0,1);
+	}
+	.topic-story-section
+	{
+		width:1000px;
+		line-height: 20px;
+		position:relative;
+		left:60px;
+	}
+	.topic-info
+	{
+		width:55%;
+		position:relative;
+		left:120px;
+		font-size:18px;
+		line-height: 28px;
+		text-align: justify;	
+		color:#151515;
+	}
+	.topic-subsection-title
+	{
+		width:1000px;
+		position:relative;
+		left:60px;
+		font-size:40px;
+		line-height: 120px;
+	}
 }
