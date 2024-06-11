@@ -8,6 +8,7 @@
 body 
 {
 	font-family: Helvetica, Arial;
+	text-size-adjust: none;
 }
 h2 
 {
