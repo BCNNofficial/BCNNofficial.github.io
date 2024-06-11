@@ -149,7 +149,7 @@ div.title a
 	width: 100%;
 	height: 135px;
 	position: fixed;
-	letf: 0px;
+	left: 0px;
 	top: 0x;
 	left: 0px;
 	z-index: 10;
@@ -172,7 +172,7 @@ div.title a
 	width: 100%;
 	height: 40px;
 	position: fixed;
-	letf: 0px;
+	left: 0px;
 	top: 102px;
 	left: 10%;
 	z-index: 10;
@@ -183,7 +183,7 @@ div.title a
 	width: 100%;
 	height: 40px;
 	position: fixed;
-	letf: 0px;
+	left: 0px;
 	top: 102px;
 	left: 0px;
 	z-index: 10;
@@ -271,12 +271,14 @@ div.title a
 	margin:auto;
 	border:2px solid rgba(0,0,0,1);
 }
+
+
 /*Headings and text content for topics pages*/
 .topic-preceeder
 {
 	color:#858585;
 }
-@media (max-aspect-ratio: 4/3) /*height longer than width (smaller than 1?)*/
+@media (max-aspect-ratio: 4/3), (aspect-ratio:4/3) /*height longer than width (smaller than 1?)*/
 {
 	.topic-preceeder
 	{
@@ -310,9 +312,9 @@ div.title a
 		width:95%;
 		margin:auto;
 		font-size:30px;
-		color:rgba(61,61,61,1.00)
+		color:rgba(61,61,61,1.00);
 		margin:auto;
-		border: 2px solid #000000
+		border: 2px solid #000000;
 	}
 	.topic-detailer tr th
 	{
@@ -442,4 +444,209 @@ div.title a
 		font-size:40px;
 		line-height: 120px;
 	}
+}
+
+
+
+/*Heading and text content for story pages*/
+@media (max-aspect-ratio: 4/3), (aspect-ratio:4/3) /*height longer than width (smaller than 1?)*/
+{
+	.story-header-container
+	{
+		width:95%;
+		margin:auto;
+	}
+	.story-header-container .story-topics-list a:visited, .story-header-container .story-topics-list a
+	{
+		color:#949494;
+		font-weight: bold;
+	}
+	.story-header-container .story-writing-details a:visited
+	{
+		color:#6b6b6b;
+	}
+	.story-topics-list
+	{
+		font-weight: bold;
+		font-size: 23px;
+		line-height: 50px;
+		position: relative;
+		left:40px;
+		width:50%;
+	}
+	.story-title
+	{
+		font-weight: bold;
+		font-size: 50px;
+		font-stretch: condensed;
+	}
+	.story-author
+	{
+		font-weight: bold;
+	}
+	.story-writing-details
+	{
+		color:#6b6b6b;
+		font-stretch: condensed;
+		font-size: 20px;
+	}
+	.story-writing-details-text
+	{
+		display:inline-block;
+		width:70%;
+	}
+	.story-social-media-icon
+	{
+		float:right;
+		margin-left: 10px;
+	}
+	.story-social-media-icon-button
+	{
+		width:40px;
+	}
+	.story-body-container
+	{
+		width:90%;
+		margin:auto;
+	}
+	.story-body-image
+	{
+		max-width:90%;
+		margin:auto;
+	}
+	.story-image-caption
+	{
+		font-size:19px;
+		font-weight: bold;
+	}
+	.story-body-text
+	{
+		text-align: justify;
+		font-size:22px;
+		line-height: 32px;
+		color:#212121;
+	}
+	.story-subsection-title
+	{
+		font-size:35px;
+		font-weight:bold;
+		font-style:italic;
+	}
+	.story-disclaimer
+	{
+		font-size:16px;
+		color:#858585;
+		font-weight: bold;
+		line-height: 25px;
+	}
+}
+@media (min-aspect-ratio:4/3) /*width longer than height (larger than 1+)*/
+{
+	.story-header-container
+	{
+		width:85%;
+		position:relative;
+		left:15%;
+	}
+	.story-header-container .story-topics-list a:visited, .story-header-container .story-topics-list a
+	{
+		color:#949494;
+		font-weight: bold;
+	}
+	.story-header-container .story-writing-details a:visited
+	{
+		color:#6b6b6b;
+	}
+	.story-topics-list
+	{
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 40px;
+		position: relative;
+		left:40px;
+		width:50%;
+	}
+	.story-title
+	{
+		font-weight: bold;
+		font-size: 50px;
+	}
+	.story-author
+	{
+		font-weight: bold;
+	}
+	.story-writing-details
+	{
+		color:#6b6b6b;
+		font-stretch: condensed;
+		font-size: 20px;
+	}
+	.story-writing-details-text
+	{
+		display:inline-block;
+		width:30%;
+	}
+	.story-social-media-icon
+	{
+		display:inline-block;
+	}
+	.story-social-media-icon-button
+	{
+		width:40px;
+	}
+	.story-body-container
+	{
+		position:relative;
+		left:15%;
+		width:55%;
+	}
+	.story-body-image
+	{
+		max-width:55%;
+	}
+	.story-image-caption
+	{
+		font-size:15px;
+		font-weight: bold;
+	}
+	.story-body-text
+	{
+		text-align: justify;
+		font-size:20px;
+		line-height: 30px;
+		color:#212121;
+	}
+	.story-subsection-title
+	{
+		font-size:30px;
+		font-weight:bold;
+		font-style:italic;
+	}
+	.story-disclaimer
+	{
+		font-size:12px;
+		color:#858585;
+		font-weight: bold;
+		line-height: 25px;
+	}
+}
+.sign-up-container
+{
+	width:90%;
+	margin: auto;
+	border:4px solid #000000;
+	background-color: #e0a8a8;
+	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
+	vertical-align:auto;
+}
+.sign-up-text
+{
+	font-style: italic;
+	position:relative;
+}
+.sign-up-submit-box
+{
+	font-size:20px
 }
