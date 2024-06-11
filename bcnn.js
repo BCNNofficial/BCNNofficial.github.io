@@ -2,7 +2,7 @@ var alltabs = ["Need to Know", "Topics", "Find a Story", "Sources", "About BCNN"
 var alltabslinks = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"]
 
 var T2Tabs = ["Phillip Ball", "Earth 3", "Business Prison", "Prison Planet"];
-var T2TabsL = ["#", "#", "#", "#"];
+var T2TabsL = ["https://bcnnofficial.github.io/topic-phillip-ball", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404"];
 
 var overT2 = 0;
 var overT2Tab = 0;
@@ -114,11 +114,32 @@ function Initiate()
 	T2.addEventListener("mouseout", function() {MoveFromT2();});
 }
 
-var sidemenuMain = ["Need to Know <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "Happening NOW<br>", "Topics <div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "Find a Story<br>", "Sources<br>", "About BCNN<br>"]
+function FootNote(myID, myString)
+{
+	console.log(document.documentElement.scrollTop);
+	
+	var myFootnote = document.getElementById(myID);
+	var myFootnoteBoundingRect = myFootnote.getBoundingClientRect();
+	var myX = myFootnoteBoundingRect.left + 10;
+	var myX = myX + "px";
+	var myY = myFootnoteBoundingRect.top + document.documentElement.scrollTop + 10;
+	var myY = myY + "px";
+
+	console.log(myFootnoteBoundingRect.right + " " + myFootnoteBoundingRect.bottom);
+
+	var footnote = document.createElement("div");
+	document.body.appendChild(footnote);
+	footnote.innerHTML = myString;
+	footnote.classList.add("footnote-box");
+	footnote.style.left = myX;
+	footnote.style.top = myY;
+}
+
+var sidemenuMain = ["<a href='https://bcnnofficial.github.io/error-404'>Need to Know</a> <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Happening NOW</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Topics</a><div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Find a Story</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Sources</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>About BCNN</a><br>"]
 
 
-var sidemenuSB0 = ["&emsp;Would like to know<br>"]; var SB0Open = 0;
-var sidemenuSB2 = ["&emsp;Business Prison<br>", "&emsp;Prison Planet<br>", "&emsp;Earth 3<br>", "&emsp;Phillip Ball <br>"]; var SB2Open = 0;
+var sidemenuSB0 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Would like to know</a><br>"]; var SB0Open = 0;
+var sidemenuSB2 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Business Prison</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Prison Planet</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Earth 3</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/topic-phillip-ball'>Phillip Ball</a> <br>"]; var SB2Open = 0;
 
 var sidemenuopened = 0;
 
