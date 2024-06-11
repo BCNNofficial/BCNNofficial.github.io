@@ -289,16 +289,20 @@ div.title a
 	}
 	.topic-header
 	{
-		font-size:80px;
-		line-height: 50px;
+		font-size:120px;
+		line-height: 90px;
 		position:relative;
 		top:-15px;
 	}
 	.topic-noter
 	{
-		font-size:22px;
+		font-size:18px;
 		color:#6b6b6b;
 		line-height: 25px;
+	}
+	hr
+	{
+		display:none;
 	}
 	.topic-detailer-informer
 	{
@@ -311,17 +315,20 @@ div.title a
 		text-align: left;
 		width:95%;
 		margin:auto;
-		font-size:30px;
-		color:rgba(61,61,61,1.00);
-		margin:auto;
-		border: 2px solid #000000;
 	}
-	.topic-detailer tr th
+	.topic-answer
 	{
-		margin:auto;
-		border: 2px solid #000000;
-		background-color:#ffd5d5;
+		font-size:50px;
 	}
+	.topic-question
+	{
+		font-size:22px;
+		width:100px;
+		color:#6b6b6b;
+		vertical-align: bottom;
+		text-align: right;
+	}
+
 	.topic-stories-collection
 	{
 		width:95%;
