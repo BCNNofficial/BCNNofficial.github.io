@@ -281,6 +281,10 @@ div.title a
 }
 @media (max-aspect-ratio: 4/3), (aspect-ratio:4/3) /*height longer than width (smaller than 1?)*/
 {
+	.topics-tab
+	{
+		display:none;
+	}
 	.topic-preceeder
 	{
 		font-size:60px;
