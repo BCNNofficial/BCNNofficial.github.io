@@ -283,23 +283,23 @@ div.title a
 {
 	.topic-preceeder
 	{
-		font-size:30px;
-		line-height: 40px;
+		font-size:60px;
+		line-height: 60px;
 		position:relative;
 		top:-15px;
 	}
 	.topic-header
 	{
-		font-size:120px;
-		line-height: 90px;
+		font-size:180px;
+		line-height: 140px;
 		position:relative;
 		top:-15px;
 	}
 	.topic-noter
 	{
-		font-size:18px;
+		font-size: 32px;
 		color:#6b6b6b;
-		line-height: 25px;
+		line-height: 30px;
 	}
 	hr
 	{
@@ -319,17 +319,23 @@ div.title a
 	}
 	.topic-answer
 	{
-		font-size:50px;
+		font-size:80px;
 	}
 	.topic-question
 	{
-		font-size:22px;
+		font-size:42px;
 		width:100px;
 		color:#6b6b6b;
 		vertical-align: bottom;
 		text-align: right;
+		overflow-wrap: break-word;
+		hyphens:auto;
 	}
-
+	th 
+	{
+		margin:auto;
+		border:1px solid #b1b1b1
+	}
 	.topic-stories-collection
 	{
 		width:95%;
@@ -339,7 +345,7 @@ div.title a
 	.topic-stories-collection .topic-stories
 	{
 		text-align: center;
-		font-size:30px;
+		font-size:50px;
 		font-stretch:condensed;
 		font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial";
 	}
@@ -354,14 +360,15 @@ div.title a
 	.topic-story-section
 	{
 		text-align:center;
-		font-size:35px;
+		font-size:70px;
+		line-height: 60px;
 	}
 	.topic-info
 	{
 		width:95%;
 		margin:auto;
-		font-size:23px;
-		line-height: 35px;
+		font-size:38px;
+		line-height: 45px;
 		text-align: justify;
 		color:#151515;
 	}
