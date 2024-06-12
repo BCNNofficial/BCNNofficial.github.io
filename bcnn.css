@@ -26,32 +26,6 @@ body
 {
 	background-color:rgba(232,218,213,1.00);
 }
-/*Effects to types of text*/
-#intro_text 
-{
-	color:rgba(255,0,4,1.00); 
-	text-align: center; 
-	text-decoration: underline
-}
-.sample_text 
-{
-	color:rgba(126,126,126,1.00);
-}
-.italictext 
-{
-	font-style: italic;
-}
-.title_text 
-{
-	color:rgba(0,0,0,1.1); 
-	font-size:50px
-}
-.informers 
-{
-	color:rgba(30,12,4,1.00); 
-	line-height:30px; 
-	font-size: 18px
-}
 /*Effects to groupings of text*/
 .newsshort 
 {
@@ -272,7 +246,49 @@ div.title a
 	margin:auto;
 	border:2px solid rgba(0,0,0,1);
 }
-
+/*Headings and text content for main pages*/
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
+{
+	.title_text
+	{
+		font-weight: bold;
+		color:rgba(0,0,0,1.1); 
+		font-size:80px;
+		width:95%;
+		margin:auto;
+		text-align: center;
+	}
+	.informers
+	{
+		font-size: 35px;
+		text-align: justify;
+		width:95%;
+		margin:auto;
+		line-height: 45px;
+	}
+}
+@media (min-aspect-ratio:4/3)
+{
+	.title_text 
+	{
+		font-weight: bold;
+		color:rgba(0,0,0,1.1); 
+		font-size:80px;
+		line-height:40px;
+		width:85%;
+		position:relative;
+		left:15%;
+	}
+	.informers 
+	{
+		color:rgba(30,12,4,1.00); 
+		line-height:30px; 
+		font-size: 22px;
+		width:55%;
+		position:relative;
+		left:15%;
+	}
+}
 
 /*Headings and text content for topics pages*/
 .topic-preceeder
