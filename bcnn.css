@@ -483,7 +483,7 @@ div.title a
 	.story-topics-list
 	{
 		font-weight: bold;
-		font-size: 23px;
+		font-size: 32px;
 		line-height: 50px;
 		position: relative;
 		left:40px;
@@ -492,7 +492,7 @@ div.title a
 	.story-title
 	{
 		font-weight: bold;
-		font-size: 50px;
+		font-size: 60px;
 		font-stretch: condensed;
 	}
 	.story-author
@@ -526,19 +526,19 @@ div.title a
 	}
 	.story-body-image
 	{
-		max-width:90%;
+		max-width:100%;
 		margin:auto;
 	}
 	.story-image-caption
 	{
-		font-size:19px;
+		font-size:25px;
 		font-weight: bold;
 	}
 	.story-body-text
 	{
 		text-align: justify;
-		font-size:22px;
-		line-height: 32px;
+		font-size:34px;
+		line-height: 40px;
 		color:#212121;
 	}
 	.story-subsection-title
@@ -549,7 +549,7 @@ div.title a
 	}
 	.story-disclaimer
 	{
-		font-size:16px;
+		font-size:23px;
 		color:#858585;
 		font-weight: bold;
 		line-height: 25px;
