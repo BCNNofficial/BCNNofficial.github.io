@@ -1,0 +1,6 @@
+Ok here's the deal
+So .cvs files are essentially just text files. Each line represents a different row, and cells within a row are separated by commas.
+If the content of the cell has a comma (for example, in the first paragraph cell, the paragraph will probably contain commas), then surround the content in parentheses
+So to add a new story to a .cvs file, first (on a new line) add the number of the story, then without spaces add a comma and paste in the article title.
+If the article title has a comma in it, surround the article title in parentheses. Again without spaces place a comma and paste in the link to the fiest image as it's referenced in the html file
+Then another comma and in parentheses (unless your first paragraph has no commas) paste the first paragraph
