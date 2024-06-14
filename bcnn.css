@@ -363,6 +363,49 @@ div.title a
 	{
 		color:white;
 	}
+	.story-end-section
+	{
+		margin-top:100px;
+	}
+	.story-disclaimer
+	{
+		font-size:23px;
+		color:#858585;
+		font-weight: bold;
+		line-height: 25px;
+	}
+	.sign-up-container
+	{
+		width:90%;
+		margin: auto;
+		border:4px solid #000000;
+		background-color: #e0a8a8;
+		text-align: center;
+		font-weight: bold;
+		font-size: 36px;
+		vertical-align:auto;
+	}
+	.sign-up-text
+	{
+		font-style: italic;
+		position:relative;
+	}
+	.sign-up-input-box
+	{
+		width:70%;
+		font-size:50px;
+	}
+	.sign-up-submit-box
+	{
+		font-size:50px;
+	}
+	.sign-up-send-button
+	{
+		width:180px;
+		height: 150px;
+		font-size:50px;
+		font-weight: bold;
+	}
 }
 @media (min-aspect-ratio: 4/3)
 {
@@ -436,8 +479,39 @@ div.title a
 	{
 		color:white;
 	}
+	.story-disclaimer
+	{
+		font-size:12px;
+		color:#858585;
+		font-weight: bold;
+		line-height: 25px;
+	}
+	.sign-up-container
+	{
+		width:90%;
+		margin: auto;
+		border:4px solid #000000;
+		background-color: #e0a8a8;
+		text-align: center;
+		font-weight: bold;
+		font-size: 26px;
+		vertical-align:auto;
+	}
+	.sign-up-text
+	{
+		font-style: italic;
+		position:relative;
+	}
+	.sign-up-submit-box
+	{
+		font-size:20px
+	}
 }
 
+.sign-up-container
+{
+	display:none;
+}
 
 /*Headings and text content for topics pages*/
 .topic-preceeder
@@ -809,31 +883,5 @@ div.title a
 		font-weight:bold;
 		font-style:italic;
 	}
-	.story-disclaimer
-	{
-		font-size:12px;
-		color:#858585;
-		font-weight: bold;
-		line-height: 25px;
-	}
-}
-.sign-up-container
-{
-	width:90%;
-	margin: auto;
-	border:4px solid #000000;
-	background-color: #e0a8a8;
-	text-align: center;
-	font-weight: bold;
-	font-size: 26px;
-	vertical-align:auto;
-}
-.sign-up-text
-{
-	font-style: italic;
-	position:relative;
-}
-.sign-up-submit-box
-{
-	font-size:20px
+	
 }
