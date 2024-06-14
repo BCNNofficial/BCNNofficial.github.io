@@ -354,6 +354,11 @@ function ReturnRandomNews(myDataSheet) {
 			var thisStoryLink = document.getElementById(otherDesiredID);
 			thisStoryLink.setAttribute('href',sheetData[randVal].link);
 
+			var storyDisclaimer = document.createElement("div");
+			thisSub.appendChild(storyDisclaimer);
+			storyDisclaimer.innerHTML = sheetData[randVal].disclaimer;
+			storyDisclaimer.classList.add("end-storybox-date");
+
 			StoryNum++;
 		}
 
