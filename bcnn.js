@@ -112,6 +112,8 @@ function Initiate()
 	var T2 = document.getElementById("t2Div");
 	T2.addEventListener("mouseover", function(e) {onMouseMove(e); MoveToT2();});
 	T2.addEventListener("mouseout", function() {MoveFromT2();});
+
+	GenerateEndStuff();
 }
 
 function FootNote(myID, myString)
@@ -143,6 +145,7 @@ var sidemenuSB2 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Bus
 
 var sidemenuopened = 0;
 
+//FUNCTIONS ASSOCIATED WITH THE SIDE BAR MENU
 function OpenSideMenu ()
 {
 	if (sidemenuopened === 0)
@@ -207,4 +210,188 @@ function ExpandSB2()
 		$(".sb2sub").remove();
 		SB2Open = 0;
 	}
+}
+
+var title = "";
+var date = "";
+var img_link = "";
+var first_paragraph = "";
+//CODE FOR GRABBING DATA FROM SPREADSHEET. COMES FROM: Laurence Svekis https://www.udemy.com/course/sheet-data-ajax/
+const getSheetData = ({ sheetID, sheetName, query, callback }) => {
+	const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?`;
+	const url = `${base}&sheet=${encodeURIComponent(
+	  sheetName
+	)}&tq=${encodeURIComponent(query)}`;
+  
+	fetch(url)
+	  .then((res) => res.text())
+	  .then((response) => {
+		callback(responseToObjects(response));
+	  });
+  
+	function responseToObjects(res) {
+	  // credit to Laurence Svekis https://www.udemy.com/course/sheet-data-ajax/
+	  const jsData = JSON.parse(res.substring(47).slice(0, -2));
+	  let data = [];
+	  const columns = jsData.table.cols;
+	  const rows = jsData.table.rows;
+	  let rowObject;
+	  let cellData;
+	  let propName;
+	  for (let r = 0, rowMax = rows.length; r < rowMax; r++) {
+		rowObject = {};
+		for (let c = 0, colMax = columns.length; c < colMax; c++) {
+		  cellData = rows[r]["c"][c];
+		  propName = columns[c].label;
+		  if (cellData === null) {
+			rowObject[propName] = "";
+		  } else if (
+			typeof cellData["v"] == "string" &&
+			cellData["v"].startsWith("Date")
+		  ) {
+			rowObject[propName] = new Date(cellData["f"]);
+		  } else {
+			rowObject[propName] = cellData["v"];
+		  }
+		}
+		data.push(rowObject);
+	  }
+	  return data;
+	}
+};
+
+// THIS IS FOR GRABBING SPECIFIC DATA. FROM https://www.youtube.com/watch?v=cRwpTv33Z_g&t=146s BY code hobo
+	
+function ReturnRandomNews(myDataSheet) {
+	
+	function sheetDataHandler(sheetData) {
+		//console.log("sheet data: ", sheetData);
+		//ADD YOUR CODE TO WORK WITH sheetData ARRAY OF OBJECTS HERE
+	};
+
+	// --==== QUERY EXAMPLES ====--
+	// --==== USE LETTERS FOR COLUMN NAMES ====--
+	//  'SELECT A,C,D WHERE D > 150'
+	//  'SELECT * WHERE B = "Potato"'
+	//  'SELECT * WHERE A contains "Jo"'
+	//  'SELECT * WHERE C = "active" AND B contains "Jo"'
+	//  "SELECT * WHERE E > date '2022-07-9' ORDER BY E DESC"
+
+	getSheetData({
+		// sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
+		sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+		// sheetName is the name of the TAB in your spreadsheet (default is "Sheet1")
+		sheetName: myDataSheet,
+		query: 'SELECT *',
+		callback: sheetDataHandler,
+	});
+	console.log(title);
+}
+
+
+  //THIS IS FOR GENERATING THUMBNAILS
+  var StoryNum = 0;
+  var bottomMenu1 = ["Need to Know", "Happening NOW", "Topics", "Find a Story"];
+  var bottomMenu1Links = ["#","#","#","#"];
+  var bottomMenu2 = ["Contact Us","Q&amp;A", "Need Help?"];
+  var bottomMenu2Links = ["#","#","#"];
+  var bottomMenu3 = ["About Us"];
+  var bottomMenu3Links = ["#"];
+  function GenerateEndStuff()
+{
+	StoryNum = 0;
+	//create
+	var totalContainer = document.createElement("div");
+	document.body.appendChild(totalContainer);
+	totalContainer.classList.add("totalinformer");
+
+	var endStoryClassContainer = document.createElement("div");
+	totalContainer.appendChild(endStoryClassContainer);
+	endStoryClassContainer.classList.add("end-storybox-container")
+
+	var proclaimer = document.createElement("div");
+	endStoryClassContainer.appendChild(proclaimer);
+	proclaimer.classList.add("end-storybox-proclaimer");
+	proclaimer.innerHTML="CHECK OUT MORE BCNN STORIES JUST FOR YOU";
+
+	var numOfStories = 4;
+	for (var i = 0; i < numOfStories; i++)
+	{
+		var storyBoxLink = document.createElement("a");
+		endStoryClassContainer.appendChild(storyBoxLink);
+		storyBoxLink.setAttribute('id', "myStrLnk"+i);
+
+		var storyBox = document.createElement("div");
+		storyBoxLink.appendChild(storyBox);
+		storyBox.classList.add("end-storybox");
+
+		var storySub = document.createElement("div");
+		storyBox.appendChild(storySub);
+		storySub.classList.add("end-storybox-subcontainer");
+		storySub.setAttribute('id', "myStrBox"+i)
+
+		function GenerateStory(sheetData)
+		{
+			var randVal = Math.floor(Math.random() * sheetData.length);
+			var desiredID = "myStrBox"+StoryNum;
+			//console.log(desiredID);
+			var thisSub = document.getElementById(desiredID);
+			//console.log(thisSub);
+			console.log(sheetData[randVal]);
+			var storyTitle = document.createElement("div");
+			thisSub.appendChild(storyTitle);
+			storyTitle.innerHTML = sheetData[randVal].name;
+			storyTitle.classList.add("end-storybox-title");
+
+			var storyDate = document.createElement("div");
+			thisSub.appendChild(storyDate);
+			storyDate.innerHTML = sheetData[randVal].date;
+			storyDate.classList.add("end-storybox-date");
+
+			thisSub.innerHTML += "<img class='end-storybox-image' src="+sheetData[randVal].img_link+"></img>";
+
+			var otherDesiredID = "myStrLnk"+StoryNum;
+			var thisStoryLink = document.getElementById(otherDesiredID);
+			thisStoryLink.setAttribute('href',sheetData[randVal].link);
+
+			StoryNum++;
+		}
+
+		getSheetData({
+			sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+			sheetName: "All",
+			query: 'SELECT *',
+			callback: GenerateStory,
+		});
+	}
+
+	var ourBottomMenu = document.createElement("div");
+		totalContainer.appendChild(ourBottomMenu);
+		ourBottomMenu.classList.add("end-bottom-menu");
+
+		var divBottomMenu1 = document.createElement("div");
+		ourBottomMenu.appendChild(divBottomMenu1);
+		divBottomMenu1.innerHTML += "<br><br>";
+		for (var i = 0; i < bottomMenu1.length; i++)
+		{
+			divBottomMenu1.innerHTML += "<a href="+bottomMenu1Links[i]+">"+bottomMenu1[i]+"</a><br>"
+		}
+		divBottomMenu1.classList.add("end-bottom-menu-container");
+
+		var divBottomMenu2 = document.createElement("div");
+		ourBottomMenu.appendChild(divBottomMenu2);
+		for (var i = 0; i < bottomMenu2.length; i++)
+		{
+			divBottomMenu2.innerHTML += "<a href="+bottomMenu2Links[i]+">"+bottomMenu2[i]+"</a><br>"
+		}
+		divBottomMenu2.classList.add("end-bottom-menu-container");
+
+		var divBottomMenu3 = document.createElement("div");
+		ourBottomMenu.appendChild(divBottomMenu3);
+		for (var i = 0; i < bottomMenu3.length; i++)
+		{
+			divBottomMenu3.innerHTML += "<a href="+bottomMenu3Links[i]+">"+bottomMenu3[i]+"</a><br>"
+		}
+		divBottomMenu3.innerHTML += "<br><br>"
+		divBottomMenu3.classList.add("end-bottom-menu-container");
 }
