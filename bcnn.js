@@ -113,6 +113,8 @@ function Initiate()
 	T2.addEventListener("mouseover", function(e) {onMouseMove(e); MoveToT2();});
 	T2.addEventListener("mouseout", function() {MoveFromT2();});
 
+	InputAd("All", "ads-all");
+
 	GenerateEndStuff();
 }
 
@@ -285,7 +287,6 @@ function ReturnRandomNews(myDataSheet) {
 		query: 'SELECT *',
 		callback: sheetDataHandler,
 	});
-	console.log(title);
 }
 
 
@@ -327,7 +328,7 @@ function ReturnRandomNews(myDataSheet) {
 
 		var storySub = document.createElement("div");
 		storyBox.appendChild(storySub);
-		storySub.classList.add("end-storybox-subcontainer");
+		storySub.classList.add("end-storybox-subcontainer"); 
 		storySub.setAttribute('id', "myStrBox"+i)
 
 		function GenerateStory(sheetData)
@@ -337,7 +338,7 @@ function ReturnRandomNews(myDataSheet) {
 			//console.log(desiredID);
 			var thisSub = document.getElementById(desiredID);
 			//console.log(thisSub);
-			console.log(sheetData[randVal]);
+			//console.log(sheetData[randVal]);
 			var storyTitle = document.createElement("div");
 			thisSub.appendChild(storyTitle);
 			storyTitle.innerHTML = sheetData[randVal].name;
@@ -348,7 +349,7 @@ function ReturnRandomNews(myDataSheet) {
 			storyDate.innerHTML = sheetData[randVal].date;
 			storyDate.classList.add("end-storybox-date");
 
-			thisSub.innerHTML += "<img class='end-storybox-image' src="+sheetData[randVal].img_link+"></img>";
+			thisSub.innerHTML += "<img class='end-storybox-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].alt+"'></img>";
 
 			var otherDesiredID = "myStrLnk"+StoryNum;
 			var thisStoryLink = document.getElementById(otherDesiredID);
@@ -399,4 +400,48 @@ function ReturnRandomNews(myDataSheet) {
 		}
 		divBottomMenu3.innerHTML += "<br><br>"
 		divBottomMenu3.classList.add("end-bottom-menu-container");
+}
+
+
+//THIS IS FOR ADS
+function InputAd (myClass, mySheet)
+{
+	var adDivs = document.getElementsByClassName("ads-all");
+	console.log(adDivs);
+	/*
+	function PlaceAd (sheetData)
+	{
+		console.log("Bust", sheetData)
+		for (var i = 0; i < adDivs.length; i++)
+		{
+			var randVal = Math.floor(Math.random() * sheetData.length);
+
+			adDivs[i].innerHTML = "<a href='"+sheetData[randVal].link+"'<img class='ad-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].description+"'></a>"+sheetData[randVal].disclaimer;
+		}
+	}
+	
+	getSheetData({
+		sheedID: "112HzQOGgjzXqQ-PrHVClEZc4e35z5w99GazrobXq_qM",
+		sheetName: "All",
+		query: 'SELECT *',
+		callback: PlaceAd,
+	})
+	*/
+	function GenerateStory(sheetData)
+		{
+			console.log("Bust", sheetData)
+			for (var i = 0; i < adDivs.length; i++)
+			{
+				var randVal = Math.floor(Math.random() * sheetData.length);
+
+				adDivs[i].innerHTML = "ADVERTISEMENT<a href='"+sheetData[randVal].link+"'><img class='ad-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].description+"'></a>"+sheetData[randVal].disclaimer;
+			}
+		}
+
+		getSheetData({
+			sheetID: "112HzQOGgjzXqQ-PrHVClEZc4e35z5w99GazrobXq_qM",
+			sheetName: "All",
+			query: 'SELECT *',
+			callback: GenerateStory,
+		});
 }
