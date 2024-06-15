@@ -292,6 +292,33 @@ div.title a
 	}
 }
 
+/*Displays for advertisements and other load-in things*/
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
+{
+	.ad-div-mobile-instory
+	{
+		width:95%;
+		margin:auto;
+		text-align: center;
+		font-size:20px;
+		font-weight: bold;
+		color:gray;
+	}
+	.ad-image
+	{
+		width:99%;
+		margin:auto;
+		border:5px solid #000000;
+	}
+}
+@media (min-aspect-ratio: 4/3)
+{
+	.ad-div-mobile-instory
+	{
+		display:none;
+	}
+}
+
 /*Displays for bottom-of-page material*/
 @media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
 {
