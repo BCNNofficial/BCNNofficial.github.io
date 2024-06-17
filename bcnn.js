@@ -113,9 +113,11 @@ function Initiate()
 	T2.addEventListener("mouseover", function(e) {onMouseMove(e); MoveToT2();});
 	T2.addEventListener("mouseout", function() {MoveFromT2();});
 
-	InputAd("All", "ads-all");
-
 	GenerateEndStuff();
+
+	SetSidebarMaterial();
+
+	InputAd("ads-all", "All");
 }
 
 function FootNote(myID, myString)
@@ -218,6 +220,8 @@ var title = "";
 var date = "";
 var img_link = "";
 var first_paragraph = "";
+
+
 //CODE FOR GRABBING DATA FROM SPREADSHEET. COMES FROM: Laurence Svekis https://www.udemy.com/course/sheet-data-ajax/
 const getSheetData = ({ sheetID, sheetName, query, callback }) => {
 	const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?`;
@@ -406,42 +410,141 @@ function ReturnRandomNews(myDataSheet) {
 //THIS IS FOR ADS
 function InputAd (myClass, mySheet)
 {
-	var adDivs = document.getElementsByClassName("ads-all");
+	var adDivs = document.getElementsByClassName(myClass);
 	console.log(adDivs);
-	/*
-	function PlaceAd (sheetData)
-	{
-		console.log("Bust", sheetData)
-		for (var i = 0; i < adDivs.length; i++)
-		{
-			var randVal = Math.floor(Math.random() * sheetData.length);
 
-			adDivs[i].innerHTML = "<a href='"+sheetData[randVal].link+"'<img class='ad-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].description+"'></a>"+sheetData[randVal].disclaimer;
-		}
-	}
-	
-	getSheetData({
-		sheedID: "112HzQOGgjzXqQ-PrHVClEZc4e35z5w99GazrobXq_qM",
-		sheetName: "All",
-		query: 'SELECT *',
-		callback: PlaceAd,
-	})
-	*/
-	function GenerateStory(sheetData)
+	console.log(typeof myClass, typeof mySheet, myClass, mySheet);
+
+	function PlaceAd(sheetData)
 		{
 			console.log("Bust", sheetData)
 			for (var i = 0; i < adDivs.length; i++)
 			{
 				var randVal = Math.floor(Math.random() * sheetData.length);
 
-				adDivs[i].innerHTML = "ADVERTISEMENT<a href='"+sheetData[randVal].link+"'><img class='ad-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].description+"'></a>"+sheetData[randVal].disclaimer;
+				adDivs[i].innerHTML = "<div class=''>ADVERTISEMENT</div><a href='"+sheetData[randVal].link+"'><img class='ad-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].description+"'></a>"+"<div class=''>"+sheetData[randVal].disclaimer+"</div>";
 			}
 		}
 
 		getSheetData({
 			sheetID: "112HzQOGgjzXqQ-PrHVClEZc4e35z5w99GazrobXq_qM",
-			sheetName: "All",
+			sheetName: mySheet,
 			query: 'SELECT *',
-			callback: GenerateStory,
+			callback: PlaceAd,
 		});
+}
+
+
+//	THIS IS FOR SETTING THE SIDEBAR MATERIAL OF STORIES
+var currentHeight = 0;
+var topicCounter = 0;
+//ERROR TO BE FIXED: IF GOING FROM MOBILE VIEW TO DESKTOP VIEW, WAY MORE ADS THAN WHAT THE PAGE CAN FIT ARE GENERATED
+function SetSidebarMaterial()
+{
+	currentHeight = 0;
+	var rightBarArray = document.getElementsByClassName("story-right-material");
+	var rightBar = rightBarArray[0];
+	var bodyArray = document.getElementsByClassName("story-body-container");
+	console.log(bodyArray);
+	var bodyRect = bodyArray[0].getBoundingClientRect();
+	var myHeight = (bodyRect.bottom - bodyRect.top);
+	//rightBar.setAttribute("style","height:"+myHeight+"px");
+
+	var ourTopicElements = document.getElementsByClassName("story-topic");
+	var ourTopics = [ourTopicElements[0].innerHTML]
+	if (ourTopicElements.length > 1)
+	{
+		for (var i = 1; i < ourTopicElements.length; i++)
+		{
+			ourTopics.push(ourTopicElements[i].innerHTML);
+		}
+	}
+	console.log(ourTopics);
+
+	function GenerateOnTopicFirst(sheetData)
+	{
+		var myOntopic = document.createElement("div");
+		rightBar.appendChild(myOntopic);
+		myOntopic.classList.add("story-right-ontopic");
+
+		var myTitle = document.createElement("div");
+		myOntopic.appendChild(myTitle);
+		myTitle.innerHTML = "See More About " + sheetData[0].topic;
+		myTitle.classList.add("story-right-ontopic-title");
+
+		var myContainer = document.createElement("div");
+		myOntopic.appendChild(myContainer);
+		myContainer.classList.add("story-right-ontopic-article-container")
+
+		for (var i = 0; i < 3; i++)
+		{
+			var randVal = Math.floor(Math.random()*sheetData.length);
+			var myArticle = document.createElement("div");
+			myContainer.appendChild(myArticle);
+			myArticle.innerHTML = "<a href='"+sheetData[randVal].link+"'>"+sheetData[randVal].name+"</a>";
+			myArticle.classList.add("story-right-ontopic-article")
+		}
+	}
+	currentHeight += 1000;
+
+	getSheetData({
+		sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+		sheetName: ourTopics[0],
+		query: 'SELECT *',
+		callback: GenerateOnTopicFirst,
+	});
+	console.log(topicCounter);
+
+	
+	while(currentHeight < myHeight)
+	{
+		var myAd = document.createElement("div");
+		rightBar.appendChild(myAd);
+		myAd.classList.add("story-right-ad-container");
+		myAd.classList.add("ads-all");
+		currentHeight += 1000;
+		if (currentHeight > myHeight)
+		{
+			break;
+		}
+
+		topicCounter += 1;
+		if (topicCounter < ourTopics.length)
+		{
+			function GenerateOnTopicFirst(sheetData)
+			{
+				var myOntopic = document.createElement("div");
+				rightBar.appendChild(myOntopic);
+				myOntopic.classList.add("story-right-ontopic");
+
+				var myTitle = document.createElement("div");
+				myOntopic.appendChild(myTitle);
+				myTitle.innerHTML = "See More About " + sheetData[0].topic;
+				myTitle.classList.add("story-right-ontopic-title");
+
+				var myContainer = document.createElement("div");
+				myOntopic.appendChild(myContainer);
+				myContainer.classList.add("story-right-ontopic-article-container")
+
+				for (var i = 0; i < 3; i++)
+				{
+					var randVal = Math.floor(Math.random()*sheetData.length);
+					var myArticle = document.createElement("div");
+					myContainer.appendChild(myArticle);
+					myArticle.innerHTML = "<a href='"+sheetData[randVal].link+"'>"+sheetData[randVal].name+"</a>";
+					myArticle.classList.add("story-right-ontopic-article")
+				}
+			}
+			currentHeight += 1000;
+		
+
+			getSheetData({
+				sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+				sheetName: ourTopics[topicCounter],
+				query: 'SELECT *',
+				callback: GenerateOnTopicFirst,
+			});
+			console.log(topicCounter);
+		}
+	}
 }
