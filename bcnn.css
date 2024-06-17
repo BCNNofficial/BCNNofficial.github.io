@@ -1,9 +1,4 @@
 @charset "utf-8";
-@font-face
-{
-	font-family: 'FranklinGothic';
-	src: url(https://github.com/BCNNofficial/BCNNofficial.github.io/raw/main/FRAMDCN.TTF) format('truetype');
-}
 /*Effects to text itself*/
 body 
 {
@@ -41,7 +36,8 @@ body
 	width:100%;
 	margin:auto; 
 	position:relative; 
-	top: 150px
+	top: 150px;
+	display:inline-block;
 }
 #pageheader 
 {
@@ -827,6 +823,10 @@ div.title a
 		font-weight: bold;
 		line-height: 25px;
 	}
+	.story-right-material
+	{
+		display: none;
+	}
 }
 @media (min-aspect-ratio:4/3) /*width longer than height (larger than 1+)*/
 {
@@ -887,6 +887,7 @@ div.title a
 		position:relative;
 		left:15%;
 		width:55%;
+		display:inline-block;
 	}
 	.story-body-image
 	{
@@ -910,5 +911,60 @@ div.title a
 		font-weight:bold;
 		font-style:italic;
 	}
-	
+	/*This is stuff related to stuff to the right*/
+	.story-right-material
+	{
+		width:28%;
+		float:right;
+		display:flex;
+		flex-direction: column;
+	}
+	.story-right-ontopic
+	{
+		margin-bottom: 100px;
+		order:1;
+	}
+	.story-right-ontopic-title
+	{
+		font-weight: bold;
+		font-style:italic;
+		font-size:28px;
+		color:#6b6b6b;
+	}
+	.story-right-ontopic-article-container
+	{
+		width:90%;
+		border:2px solid #6b6b6b;
+		background-color: #d1d1d1;
+	}
+	.story-right-ontopic-article
+	{
+		width:98%;
+		margin:auto;
+		border: 1px solid #6b6b6b;
+		background-color: #c1c1c1;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		font-size:22px;
+		font-weight: bold;
+		font-stretch: condensed;
+		color:black;
+	}
+	.story-right-ontopic-article a, .story-right-ontopic-article a:visited
+	{
+		color:black
+	}
+	.story-right-ad-container
+	{
+		position:relative;
+		width:95%;
+		text-align: center;
+		margin-bottom: 400px;
+		order:2;
+	}
+	.ad-image
+	{
+		width:100%;
+		border: 3px solid #000000;
+	}
 }
