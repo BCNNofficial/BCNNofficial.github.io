@@ -11,6 +11,8 @@ var T2TabExists = 0;
 var xPos = 0;
 var yPos = 0;
 
+var fading = 0;
+
 function onMouseMove(e)
 {
 	//console.log("BUST");
@@ -35,6 +37,9 @@ function OpenTab ()
 	//topicTabs.classname = "topics-tab";
 	document.body.appendChild(topicTabs);
 
+	var op = 0.1;  // initial opacity
+	topicTabs.style.opacity = op;
+
 	for (var i = 0; i < T2Tabs.length; i++)
 	{
 		topicTabs.innerHTML += "<a href=\""+T2TabsL[i]+"\">"+T2Tabs[i]+"</a><br>";
@@ -44,6 +49,18 @@ function OpenTab ()
 	
 	topicTabs.style.top = (yPos) + "px";
 	topicTabs.style.left = (xPos) + "px";	
+
+	topicTabs.style.display = 'block';
+    var timer = setInterval(function () {
+		fading = 1;
+        if (op >= 1){
+			fading = 0;
+            clearInterval(timer);
+        }
+        topicTabs.style.opacity = op;
+        topicTabs.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.2;
+    }, 10);
 
 	//console.log("divposX: "+topicTabs.style.left);
 	//console.log("divposy: "+topicTabs.style.top);
@@ -58,20 +75,59 @@ function OpenTab ()
 
 function MoveToT2 ()
 {
+	fading = 0;
+	//console.log("Fading: " + fading);
 	overT2 = 1;
-	console.log("overT2: "+overT2);
-	setTimeout(function(e) {if (overT2Tab === 0 && T2TabExists === 0){OpenTab(e);}}, 1000);
+	//console.log("overT2: "+overT2);
+	if (fading === 0)
+	{
+		//console.log("overT2Tab: " + overT2Tab + " T2TabExists: " + T2TabExists);
+		setTimeout(function(e) {if (overT2Tab === 0 && T2TabExists === 0 && overT2 === 1){OpenTab(e);}}, 500);
+	}
+	
 }
 function MoveToT2Tab ()
 {
+	fading = 0;
+	//console.log("Fading: " + fading);
 	overT2Tab = 1;
-	console.log("overT2Tab: "+overT2Tab);
+	//console.log("overT2Tab: "+overT2Tab);
 }
 function MoveFromT2 ()
 {
+	fading = 0;
+	//console.log("Fading: " + fading);
 	overT2 = 0;
-	console.log("overT2: "+overT2);
-	setTimeout(function(){if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove(); T2TabExists = 0;}}, 1000)
+	//console.log("overT2: "+overT2);
+	if (fading === 0)
+	{
+		var op = 1;
+		setTimeout(function(){
+			if (overT2 === 0 && overT2Tab === 0){
+				var timer = setInterval(function () {
+					fading = 1;
+					var topicTabs = document.getElementsByClassName("topics-tab")[0];
+					//console.log(topicTabs);	
+					if (topicTabs === undefined)
+					{
+						overT2Tab = 0;
+						T2TabExists = 0;
+						clearInterval(timer);
+					}
+					if (op <= 0.1){
+						fading = 0;
+						topicTabs.remove();
+						overT2Tab = 0;
+						T2TabExists = 0;
+						clearInterval(timer);
+					}
+					topicTabs.style.opacity = op;
+					topicTabs.style.filter = 'alpha(opacity=' + op * 100 + ")";
+					op -= op * 0.15;
+				}, 10);
+			}
+		}, 500)
+	}
 	//if (overT2 === 0 && overT2Tab === 0)
 	//{
 	//	$(".topics-tab").remove();	
@@ -79,9 +135,39 @@ function MoveFromT2 ()
 }
 function MoveFromT2Tab ()
 {
+	fading = 0;
+	//console.log("Fading: " + fading);
 	overT2Tab = 0;
-	console.log("overT2Tab: "+overT2Tab);
-	setTimeout(function(){if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove(); T2TabExists = 0;}}, 1000)
+	//console.log("overT2: "+overT2);
+	if (fading === 0)
+	{
+		var op = 1;
+		setTimeout(function(){
+			if (overT2 === 0 && overT2Tab === 0){
+				var timer = setInterval(function () {
+					fading = 1;
+					var topicTabs = document.getElementsByClassName("topics-tab")[0];
+					//console.log(topicTabs);
+					if (topicTabs === undefined)
+					{
+						overT2Tab = 0;
+						T2TabExists = 0;
+						clearInterval(timer);
+					}
+					if (op <= 0.1){
+						fading = 0;
+						topicTabs.remove();
+						overT2Tab = 0;
+						T2TabExists = 0;
+						clearInterval(timer);
+					}
+					topicTabs.style.opacity = op;
+					topicTabs.style.filter = 'alpha(opacity=' + op * 100 + ")";
+					op -= op * 0.15;
+				}, 10);
+			}
+		}, 500)
+	}
 	//if (overT2 === 0 && overT2Tab === 0){$(".topics-tab").remove();}
 }
 
@@ -120,8 +206,10 @@ function Initiate()
 	InputAd("ads-all", "All");
 }
 
+footnoteDeleted = 1;
 function FootNote(myID, myString)
 {
+	footnoteDeleted = 0;
 	console.log(document.documentElement.scrollTop);
 	
 	var myFootnote = document.getElementById(myID);
@@ -135,10 +223,56 @@ function FootNote(myID, myString)
 
 	var footnote = document.createElement("div");
 	document.body.appendChild(footnote);
+	var op = 0.1;  // initial opacity
+	footnote.style.opacity = op;
 	footnote.innerHTML = myString;
 	footnote.classList.add("footnote-box");
-	footnote.style.left = myX;
-	footnote.style.top = myY;
+	if ((window.innerWidth * 4/3) > window.innerHeight)
+	{
+		footnote.style.left = myX;
+		footnote.style.top = myY;
+	}
+
+    footnote.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        footnote.style.opacity = op;
+        footnote.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.15;
+    }, 10);
+	var deleted = 0;
+
+	document.body.addEventListener("mouseup", function(e) {
+		
+		myX = e.clientX;
+		myY = e.clientY;
+		footRect = footnote.getBoundingClientRect();
+		console.log(footRect);
+		console.log(footRect.left, footRect.right, footRect.top, footRect.bottom);
+		console.log("X: " + myX, "Y: " + myY);
+		if (footRect.left < myX && footRect.right > myX && footRect.top < myY && footRect.bottom > myY)
+		{
+			console.log("bust")
+		}
+		else if (footnoteDeleted===0)
+		{
+			var timer = setInterval(function () {
+				if (op <= 0){
+					clearInterval(timer);
+					footnote.remove();
+					footnoteDeleted=1;
+				}
+				footnote.style.opacity = op;
+				footnote.style.filter = 'alpha(opacity=' + op * 100 + ")";
+				op -= op * 0.15;
+			}, 10);
+
+			//footnote.remove();
+			//console.log("CLICK OUTSIDE OF BOX, REMOVE BOX")
+		}
+	})
 }
 
 var sidemenuMain = ["<a href='https://bcnnofficial.github.io/error-404'>Need to Know</a> <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Happening NOW</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Topics</a><div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Find a Story</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Sources</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>About BCNN</a><br>"]
@@ -547,4 +681,64 @@ function SetSidebarMaterial()
 			console.log(topicCounter);
 		}
 	}
+}
+
+//THIS IS FOR TOPIC AND OTHER THINGS WHERE WE WANT TO FILL A CONTAINER WITH STORIES
+function FillWithStories (myID, mySheet)
+{
+	var numOfStories = 4;
+	
+	
+	function GenerateStory(sheetData)
+	{
+		var container = document.getElementById(myID);
+
+		console.log(myID, mySheet);
+
+		console.log(container);
+
+		for (var i = 0; i < numOfStories; i++)
+		{
+			//console.log(container);
+			var storyBoxLink = document.createElement("a");
+			container.appendChild(storyBoxLink);
+
+			var storyBox = document.createElement("div");
+			storyBoxLink.appendChild(storyBox);
+			storyBox.classList.add("end-storybox");
+
+			var storySub = document.createElement("div");
+			storyBox.appendChild(storySub);
+			storySub.classList.add("end-storybox-subcontainer"); 
+			storySub.setAttribute('id', mySheet+"myStrBox"+i)
+
+			var randVal = Math.floor(Math.random() * sheetData.length);
+
+			var storyTitle = document.createElement("div");
+			storySub.appendChild(storyTitle);
+			storyTitle.innerHTML = sheetData[randVal].name;
+			storyTitle.classList.add("end-storybox-title");
+
+			var storyDate = document.createElement("div");
+			storySub.appendChild(storyDate);
+			storyDate.innerHTML = sheetData[randVal].date;
+			storyDate.classList.add("end-storybox-date");
+
+			storySub.innerHTML += "<img class='end-storybox-image' src='"+sheetData[randVal].img_link+"' alt='"+sheetData[randVal].alt+"'></img>";
+
+			storyBoxLink.setAttribute('href',sheetData[randVal].link);
+
+			var storyDisclaimer = document.createElement("div");
+			storySub.appendChild(storyDisclaimer);
+			storyDisclaimer.innerHTML = sheetData[randVal].disclaimer;
+			storyDisclaimer.classList.add("end-storybox-date");
+		}
+	}
+
+	getSheetData({
+		sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+		sheetName: mySheet,
+		query: 'SELECT *',
+		callback: GenerateStory,
+	});
 }
