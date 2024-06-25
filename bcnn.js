@@ -209,6 +209,7 @@ function Initiate()
 footnoteDeleted = 1;
 function FootNote(myID, myString)
 {
+	$(".footnote-box").remove();
 	footnoteDeleted = 0;
 	console.log(document.documentElement.scrollTop);
 	
@@ -227,7 +228,13 @@ function FootNote(myID, myString)
 	footnote.style.opacity = op;
 	footnote.innerHTML = myString;
 	footnote.classList.add("footnote-box");
-	if ((window.innerWidth * 4/3) > window.innerHeight)
+
+	var width = window.innerWidth;
+	width = (width * 3) / 4
+
+	console.log(typeof width, typeof window.innerHeight)
+
+	if ((width) > (window.innerHeight))
 	{
 		footnote.style.left = myX;
 		footnote.style.top = myY;
