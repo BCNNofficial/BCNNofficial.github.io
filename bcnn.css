@@ -172,29 +172,7 @@ div.title a
 	left:calc(100% - 100px);
 	cursor:pointer;
 }
-.topics-tab
-{
-	position:fixed;
-	font-size:22px;
-	line-height: 30px;
-	margin: auto;
-	border:3px solid rgba(0,0,0,1);
-	background:rgba(255,194,117,1.00);
-	z-index: 12;
-}
-.footnote
-{
-	cursor: pointer;
-}
-.footnote-box
-{
-	position:absolute;
-	font-size:15px;
-	line-height:20px;
-	width:360px;
-	border:3px solid rgba(0,0,0,1);
-	background:rgba(255,194,117,1.00);
-}
+
 @media (min-width: 550px), (width:550px)
 {
 	.side-menu
@@ -553,7 +531,9 @@ div.title a
 		font-size:60px;
 		line-height: 60px;
 		position:relative;
-		top:-15px;
+		top:-9px;
+		left:10px;
+		width:98%;
 	}
 	.topic-header
 	{
@@ -567,6 +547,9 @@ div.title a
 		font-size: 32px;
 		color:#6b6b6b;
 		line-height: 30px;
+		position:relative;
+		left:10px;
+		width:98%;
 	}
 	hr
 	{
@@ -583,6 +566,7 @@ div.title a
 		text-align: left;
 		width:95%;
 		margin:auto;
+		margin-top: 200px;
 	}
 	.topic-answer
 	{
@@ -629,6 +613,7 @@ div.title a
 		text-align:center;
 		font-size:70px;
 		line-height: 60px;
+		margin-top: 200px;
 	}
 	.topic-info
 	{
@@ -641,14 +626,43 @@ div.title a
 	}
 	.topic-subsection-title
 	{
-		font-size:40px;
-		line-height: 80px;
+		width:95%;
+		margin:auto;
+		font-size:60px;
+		line-height: 60px;
+		font-weight: bold;
+		font-style: italic;
 	}
-
+	.footnote
+	{
+		cursor: pointer;
+	}
+	.footnote-box
+	{
+		position:fixed;
+		font-size:30px;
+		line-height:32px;
+		width:100%;
+		height:20%;
+		top:80%;
+		left:0px;
+		border:3px solid rgba(0,0,0,1);
+		background:rgba(255,194,117,1.00);
+	}
 	/**/
 }
 @media (min-aspect-ratio: 4/3) /*width longer than height (larger than 1+)*/
 {
+	.topics-tab
+	{
+		position:fixed;
+		font-size:22px;
+		line-height: 30px;
+		margin: auto;
+		border:3px solid rgba(0,0,0,1);
+		background:rgba(255,194,117,1.00);
+		z-index: 12;
+	}
 	.topic-preceeder
 	{
 		font-size:40px;
@@ -658,10 +672,10 @@ div.title a
 	}
 	.topic-header
 	{
-		font-size:100px;
-		line-height: 70px;
+		font-size:160px;
+		line-height: 100px;
 		position:relative;
-		top:-15px;
+		top:-10px;
 	}
 	.topic-noter
 	{
@@ -676,6 +690,7 @@ div.title a
 	}
 	.topic-detailer
 	{
+		margin-top: 100px;
 		text-align: left;
 		width:70%;
 		font-size:30px;
@@ -684,8 +699,7 @@ div.title a
 	.topic-stories-collection
 	{
 		display:table;
-		width:80%;
-		margin:auto;
+		width:100%;
 		table-layout:fixed;
 	}
 	.topic-stories-collection .topic-stories
@@ -705,16 +719,13 @@ div.title a
 	}
 	.topic-story-section
 	{
-		width:1000px;
+		font-size: 50px;
 		line-height: 20px;
-		position:relative;
-		left:60px;
+		margin-top: 100px;
 	}
 	.topic-info
 	{
-		width:55%;
-		position:relative;
-		left:120px;
+		width:70%;
 		font-size:18px;
 		line-height: 28px;
 		text-align: justify;	
@@ -722,11 +733,29 @@ div.title a
 	}
 	.topic-subsection-title
 	{
-		width:1000px;
-		position:relative;
-		left:60px;
-		font-size:40px;
+		font-size:50px;
 		line-height: 120px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.footnote
+	{
+		cursor: pointer;
+	}
+	.footnote-box
+	{
+		position:absolute;
+		font-size:15px;
+		line-height:20px;
+		width:360px;
+		border:3px solid rgba(0,0,0,1);
+		background:rgba(255,194,117,1.00);
+	}
+	.topic-body-text
+	{
+		position:relative;
+		width:85%;
+		left:15%;
 	}
 }
 
