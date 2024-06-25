@@ -2,7 +2,7 @@ var alltabs = ["Need to Know", "Topics", "Find a Story", "Sources", "About BCNN"
 var alltabslinks = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"]
 
 var T2Tabs = ["Phillip Ball", "Earth 3", "Business Prison", "Prison Planet"];
-var T2TabsL = ["https://bcnnofficial.github.io/topic-phillip-ball", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404"];
+var T2TabsL = ["http://bcnnofficial.github.io/topics/phillip-ball", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404"];
 
 var overT2 = 0;
 var overT2Tab = 0;
@@ -286,7 +286,7 @@ var sidemenuMain = ["<a href='https://bcnnofficial.github.io/error-404'>Need to 
 
 
 var sidemenuSB0 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Would like to know</a><br>"]; var SB0Open = 0;
-var sidemenuSB2 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Business Prison</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Prison Planet</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Earth 3</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/topic-phillip-ball'>Phillip Ball</a> <br>"]; var SB2Open = 0;
+var sidemenuSB2 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Business Prison</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Prison Planet</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Earth 3</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/topics/phillip-ball'>Phillip Ball</a> <br>"]; var SB2Open = 0;
 
 var sidemenuopened = 0;
 
