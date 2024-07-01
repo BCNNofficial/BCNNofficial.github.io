@@ -712,6 +712,11 @@ div.title a
 		font-size:30px;
 		color:rgba(61,61,61,1.00)
 	}
+	th 
+	{
+		margin:auto;
+		border:1px solid #b1b1b1
+	}
 	.topic-stories-collection
 	{
 		display:table;
@@ -776,8 +781,17 @@ div.title a
 	}
 	.topic-image-and-caption
 	{
-		width:90%;
-		margin:auto;
+		width:50%;
+		margin-top: 100px;
+	}
+	.topic-image
+	{
+		width:100%;
+	}
+	.topic-image-caption
+	{
+		font-size:30px;
+		font-weight: bold;
 	}
 }
 
