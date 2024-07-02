@@ -923,6 +923,7 @@ div.title a
 	{
 		font-weight: bold;
 		font-size: 50px;
+		width:80%;
 	}
 	.story-author
 	{
@@ -956,11 +957,11 @@ div.title a
 	}
 	.story-body-image
 	{
-		max-width:55%;
+		max-width:100%;
 	}
 	.story-image-caption
 	{
-		font-size:15px;
+		font-size:20px;
 		font-weight: bold;
 	}
 	.story-body-text
