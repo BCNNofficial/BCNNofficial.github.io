@@ -315,6 +315,7 @@ div.title a
 		width:95%;
 		margin:auto;
 		text-align: center;
+		line-height: 160px;
 	}
 	.informers
 	{
@@ -332,7 +333,7 @@ div.title a
 		font-weight: bold;
 		color:rgba(0,0,0,1.1); 
 		font-size:80px;
-		line-height:40px;
+		line-height:100px;
 		width:85%;
 		position:relative;
 		left:15%;
