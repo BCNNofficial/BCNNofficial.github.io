@@ -13,10 +13,12 @@ var yPos = 0;
 
 var fading = 0;
 
+var myTopics = [];
+
 function onMouseMove(e)
 {
 	//console.log("BUST");
-	console.log(e);
+	//console.log(e);
 	xPos = e.clientX;
 	yPos = e.clientY;
 }
@@ -40,9 +42,14 @@ function OpenTab ()
 	var op = 0.1;  // initial opacity
 	topicTabs.style.opacity = op;
 
-	for (var i = 0; i < T2Tabs.length; i++)
+	/*for (var i = 0; i < T2Tabs.length; i++)
 	{
 		topicTabs.innerHTML += "<a href=\""+T2TabsL[i]+"\">"+T2Tabs[i]+"</a><br>";
+	}*/
+
+	for (var i = 0; i < myTopics.length; i++)
+	{
+		topicTabs.innerHTML += "<a href='"+myTopics[i].link+"'>"+myTopics[i].name+"</a><br>";
 	}
 
 	topicTabs.classList.add("topics-tab");
@@ -173,6 +180,25 @@ function MoveFromT2Tab ()
 
 function Initiate()
 {
+	function sheetDataHandler(sheetData) {
+		//console.log("sheet data: ", sheetData);
+		for (var i = 0; i < sheetData.length; i++)
+		{
+			console.log("entered this AEROSBAENTRSBNAITERSBITN")
+			myTopics.push(sheetData[i]);
+		}
+		console.log(myTopics);
+	};
+
+	getSheetData({
+		// sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
+		sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+		// sheetName is the name of the TAB in your spreadsheet (default is "Sheet1")
+		sheetName: "All",
+		query: 'SELECT *',
+		callback: sheetDataHandler,
+	});
+
 	//add header stuff
 	var content = "";
 	content += "<div class='title'><a href='https://bcnnofficial.github.io'>BCNN</a></div>";
@@ -282,12 +308,12 @@ function FootNote(myID, myString)
 	})
 }
 
-var sidemenuMain = ["<a href='https://bcnnofficial.github.io/error-404'>Need to Know</a> <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Happening NOW</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Topics</a><div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/error-404'>Find a Story</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>Sources</a><br>", "<a href='https://bcnnofficial.github.io/error-404'>About BCNN</a><br>"]
+//code stuff to change the icon once clicked
+var sidemenuMain = ["<a href='https://bcnnofficial.github.io/need-to-know'>Need to Know</a> <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://github.com/BCNNofficial/BCNNofficial.github.io/blob/main/expand.png?raw=true' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/happening-NOW'>Happening NOW</a><br>", "<a href='https://bcnnofficial.github.io/topics'>Topics</a> <div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://github.com/BCNNofficial/BCNNofficial.github.io/blob/main/expand.png?raw=true' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/find-a-story'>Find a Story</a><br>", "<a href='https://bcnnofficial.github.io/sources'>Sources</a><br>", "<a href='https://bcnnofficial.github.io/about-us'>About BCNN</a><br>"]
 
 
-var sidemenuSB0 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Would like to know</a><br>"]; var SB0Open = 0;
-var sidemenuSB2 = ["&emsp;<a href='https://bcnnofficial.github.io/error-404'>Business Prison</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Prison Planet</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/error-404'>Earth 3</a><br>", "&emsp;<a href='https://bcnnofficial.github.io/topics/phillip-ball'>Phillip Ball</a> <br>"]; var SB2Open = 0;
-
+var sidemenuSB0 = ["<a href='https://bcnnofficial.github.io/would-like-to-know'>Would like to know</a><br>"]; var SB0Open = 0;
+var SB2Open = 0;
 var sidemenuopened = 0;
 
 //FUNCTIONS ASSOCIATED WITH THE SIDE BAR MENU
@@ -295,25 +321,51 @@ function OpenSideMenu ()
 {
 	if (sidemenuopened === 0)
 	{
+		SB0Open = 0; SB2Open = 0;
 		console.log("OpenSideMenu function entered")
 		var sidemenu = document.createElement("div");
 		document.body.appendChild(sidemenu);
+		sidemenu.className = "side-menu";
+		sidemenu.innerHTML += "BCNN Pages Portal";
+
+		var sidemenuContainer = document.createElement("div");
+		sidemenu.appendChild(sidemenuContainer);
+		sidemenuContainer.classList.add("side-menu-container");
 
 		for (var i = 0; i < sidemenuMain.length; i++)
 		{
 			console.log("Main loop iteration " + i)
 			var myTab = document.createElement("span")
-			sidemenu.appendChild(myTab);
+			sidemenuContainer.appendChild(myTab);
 			myTab.innerHTML = sidemenuMain[i];
 			myTab.className = "sb"+i;
 		}
 
-		sidemenu.className = "side-menu";
-
 		var exitbutton = document.createElement("div")
 		sidemenu.appendChild(exitbutton);
-		exitbutton.innerHTML = "<img class='exit-button' src='https://raw.githubusercontent.com/BCNNofficial/BCNNofficial.github.io/main/sample-box.png' alt='exit'>"
+		exitbutton.innerHTML = "<img class='exit-button' src='https://github.com/BCNNofficial/BCNNofficial.github.io/blob/main/close.png?raw=true' alt='exit'>"
 		exitbutton.addEventListener("click", function() {$(".side-menu").remove(); sidemenuopened = 0;})
+		exitbutton.classList.add("exit-button-container")
+		sidemenuopened = 1;
+
+		var ourWidth = sidemenu.getBoundingClientRect().width;
+		console.log(ourWidth);
+		var ourLeft = -ourWidth;
+
+		sidemenu.style.left = ourLeft + "px";
+		exitbutton.style.left= (ourLeft + ourWidth - 50) + "px";
+
+		var timer = setInterval(function () {
+			if (ourLeft >= 0){
+				sidemenu.style.left= "0px";
+				exitbutton.style.left= (ourWidth - 50) + "px";
+				clearInterval(timer);
+			}
+			ourLeft = ourLeft * (9/10) + 0.1;
+			sidemenu.style.left = ourLeft + "px";
+			exitbutton.style.left= (ourLeft + ourWidth - 50) + "px";
+			console.log(ourLeft, sidemenu.style.left, exitbutton.style.left); 
+		}, 10);
 	}
 }
 function ExpandSB0()
@@ -321,18 +373,19 @@ function ExpandSB0()
 	console.log("ExpandSB0 function entered")
 	if (SB0Open === 0)
 	{
+		$("<div id='sb0-container' class='side-sub-container'></div>").insertAfter(".sb0");
+		var sb0Container = document.getElementById("sb0-container");
 		for (var i = 0; i < sidemenuSB0.length; i++)
 		{
 			console.log("SB0 loop iteration " + i)
-			var myTab = document.createElement("span");
-			myTab.classList.add = "sb0sub";
-			$("<span class='sb0sub'>"+sidemenuSB0[i]+"</span>").insertAfter(".sb0");
+
+			sb0Container.innerHTML += "<span class='sb0sub sub-atl'>"+sidemenuSB0[i]+"</span>";
 			SB0Open = 1;
 		}
 	}
 	else if (SB0Open === 1)
 	{
-		$(".sb0sub").remove();
+		$("#sb0-container").remove();
 		SB0Open = 0;
 	}
 }
@@ -341,12 +394,12 @@ function ExpandSB2()
 	console.log("ExpandSB2 function entered")
 	if (SB2Open === 0)
 	{
-		for (var i = 0; i < sidemenuSB2.length; i++)
+		$("<div id='sb2-container' class='side-sub-container'></div>").insertAfter(".sb2");
+		var sb2Container = document.getElementById("sb2-container");
+		for (var i = 0; i < myTopics.length; i++)
 		{
 			console.log("SB2 loop iteration " + i)
-			var myTab = document.createElement("span");
-			myTab.classList.add = "sb2sub";
-			$("<span class='sb2sub'>"+sidemenuSB2[i]+"</span>").insertAfter(".sb2");
+			sb2Container.innerHTML += "<span class='sb2sub sub-atl'><a href='"+myTopics[i].link+"'>"+myTopics[i].name+"</a><br></span>";
 			SB2Open = 1;
 		}
 	}
