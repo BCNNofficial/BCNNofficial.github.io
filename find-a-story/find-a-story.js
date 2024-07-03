@@ -83,3 +83,22 @@ function FindStories ()
         });
     }
 }
+
+function FindAStoryInitiate()
+{
+    function InputNews (sheetData)
+    {
+        var selectContainer = document.getElementById("topic-chooser");
+        for (var i = 0; i < sheetData.length; i++)
+        {
+            selectContainer.innerHTML += "<option value='"+sheetData[i].name+"'>"+sheetData[i].name+"</option>";
+        }
+    }
+
+    getSheetData({
+        sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+        sheetName: "All",
+        query: "SELECT *",
+        callback: InputNews,
+    });
+}
