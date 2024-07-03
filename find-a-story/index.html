@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>BCNN: Topics</title>
-<link href="https://bcnnofficial.github.io/bcnn.css" rel="stylesheet" type="text/css">
+<link href="/bcnn.css" rel="stylesheet" type="text/css">
 <link href="find-a-story.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<div class="totalinformer">
-		<div class="title_text"><br><br>Find a Story<br><br></div>
-		<div class="informers">Here at BCNN, we know that sometimes, you know exactly what you're looking for, and don't want anyone getting in your way. That's why with our new "Find a Story" feature, you can locate the article, source, or anything else you are looking for. And if, after searching you still cannot find what you are looking for, then feel more than free to utilize our "Request" feature if you know about something we haven't covered yet. It doesn't happen often with our worlds-class reporting. But at the end of the day, there's nothing more powerful than the power of the poeple.<br><br></div>
+		<div class="title_text">Find a Story</div>
+		<div class="informers">Here at BCNN, we know that sometimes, you know exactly what you're looking for, and don't want anyone getting in your way. That's why with our new "Find a Story" feature, you can locate the article you are looking for. And if, after searching you still cannot find what you are looking for, then feel more than free to utilize our "Request" feature if you know about something we haven't covered yet. It doesn't happen often with our worlds-class reporting. But at the end of the day, there's nothing more powerful than the power of the poeple.<br><br>Click <a href='https://docs.google.com/forms/d/e/1FAIpQLSducRWDuvT1bcCzgCgyI_5SZB-wGShXf6GCkpjnz7xOIqzxWA/viewform'><strong>here</strong></a> to submit a request.<br><br></div>
 		<div class="search-bar">
 			<div class="type-box-container">
 				<label for="Title">Title:</label><input type="text" id="Title" name="Title" placeholder="Enter title search here">
@@ -19,8 +19,6 @@
 				<label for="topic-chooser">Topic:</label>
 				<select name="topic-chooser" id="topic-chooser">
 					<option value="All">All</option>
-					<option value="Phillip Ball">Phillip Ball</option>
-					<option value="Earth 4">Earth 4</option>
 				</select>
 			</div>
 			<div class="search-button-container">
@@ -35,6 +33,7 @@
 	<script src="https://bcnnofficial.github.io/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
 	<script src="find-a-story.js"></script>
 	<script>
+		FindAStoryInitiate();
 		Initiate();
 	</script>
 </body>
