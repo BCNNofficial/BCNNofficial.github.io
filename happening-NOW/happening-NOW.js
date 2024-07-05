@@ -26,8 +26,12 @@ function InitiateHappening ()
                     endOf.innerHTML = "You have loaded the last story, so no more stories can be loaded. Congradulations.";
                     break;
                 }
+                var storyLink = document.createElement("a");
+                container.appendChild(storyLink);
+                storyLink.setAttribute("href",sheetData[i].link);
+
                 var storyBox = document.createElement("div");
-                container.appendChild(storyBox);
+                storyLink.appendChild(storyBox);
                 storyBox.classList.add("story-container");
 
                 var storySubBox = document.createElement("div");
