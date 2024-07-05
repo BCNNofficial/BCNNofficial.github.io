@@ -1,0 +1,107 @@
+@charset "utf-8";
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
+{
+    #newest-stories-container
+    {
+        text-align: center;
+    }
+    #loader
+    {
+        width:90%;
+        background-color: lightcoral;
+        margin:auto;
+        border:7px solid #000000;
+        font-size:50px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    #sub-loader
+    {
+        width:95%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #Number
+    {
+        font-size: 50px;
+        font-weight: bold;
+        width:100px;
+    }
+    #pull-button
+    {
+        width:200px;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    /*FOR THE STORIES THAT GENERATE BELOW*/
+    .story-container
+    {
+        width:80%;
+        margin:auto;
+        background-color:darksalmon;
+        border:5px solid #000000;
+        margin-top: 50px;
+    }
+    .story-sub-container
+    {
+        width:97%;
+        margin:auto;
+    }
+    .story-sub-title
+    {
+        text-align: left;
+        font-size: 45px;
+        font-weight: bold;
+        font-stretch: condensed;
+    }
+    .story-sub-image-container
+    {
+        width:100%;
+    }
+    .story-sub-image
+    {
+        max-width:98%;
+        margin: auto;
+        border:3px solid rgb(89, 89, 89);
+    }
+    .story-sub-disc
+    {
+        color:gray;
+        font-size: 25px;
+        text-align: center;
+    }
+    .story-sub-para
+    {
+        margin-top: 7px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 25px;
+        border:1px solid #000000;
+
+    }
+    .story-sub-sub-para
+    {
+        width:99%;
+        margin:5px;
+        color:#323232;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .final-story
+    {
+        font-size: 30px;
+        font-weight: bold;
+        color:gray;
+        width:90%;
+        margin:auto;
+        margin-top:30px;
+    }
+}
+@media (min-aspect-ratio: 4/3)
+{
+
+}
