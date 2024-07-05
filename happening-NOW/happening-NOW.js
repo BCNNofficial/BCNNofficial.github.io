@@ -28,7 +28,7 @@ function InitiateHappening ()
                 }
                 var storyLink = document.createElement("a");
                 container.appendChild(storyLink);
-                storyLink.setAttribute("href",sheetData[i].link);
+                storyLink.setAttribute("href",sheetData[ourcur].link);
 
                 var storyBox = document.createElement("div");
                 storyLink.appendChild(storyBox);
