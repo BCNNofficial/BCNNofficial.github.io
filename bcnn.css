@@ -379,6 +379,16 @@ div.title a
 /*Displays for bottom-of-page material*/
 @media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
 {
+	.thoughts
+	{
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+		margin:auto;
+		margin-top: 20px;
+		background-color:khaki;
+		border: 5px solid #000000;
+	}
 	.end-storybox-container
 	{
 		width:90%;
@@ -493,6 +503,16 @@ div.title a
 }
 @media (min-aspect-ratio: 4/3)
 {
+	.thoughts
+	{
+		text-align: center;
+		font-size: 30px;
+		font-weight: bold;
+		margin:auto;
+		margin-top: 20px;
+		background-color:khaki;
+		border: 5px solid #000000;
+	}
 	.end-storybox-container
 	{
 		width:85%;
