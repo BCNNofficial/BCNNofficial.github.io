@@ -472,6 +472,7 @@ div.title a
 	{
 		width:90%;
 		margin: auto;
+		margin-top: 50px;
 		border:4px solid #000000;
 		background-color: #e0a8a8;
 		text-align: center;
@@ -612,10 +613,6 @@ div.title a
 	}
 }
 
-.sign-up-container
-{
-	display:none;
-}
 
 /*Headings and text content for topics pages*/
 .topic-preceeder
