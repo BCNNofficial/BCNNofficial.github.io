@@ -2,18 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>BCNN: Topics</title>
-<link href="https://bcnnofficial.github.io/bcnn.css" rel="stylesheet" type="text/css">
+<title>BCNN: Need to Know</title>
+<link href="/bcnn.css" rel="stylesheet" type="text/css">
+<link href="topics.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<div class="totalinformer">
-		<div class="title_text"><br><br>Topics<br><br></div>
-		<div class="informers">Here at BCNN, we get it. Nobody knows better than us that the world(s) are a complicated place, and there's a lot to keep track of. And we're here to help. Here you can find articles, sources, and other pieces of information sorted by topic for your convinience. From our stats, we know you're on the move, and we hope this can keep you just a little more on the move.<br><br></div>
-		<br>
+		<div class="title_text">Topics</div>
+		<div class="informers">Here at BCNN, we get it. Nobody knows better than us that the world(s) are a complicated place, and there's a lot to keep track of. And we're here to help. Here you can find our available topic pages and the associated stories. From our stats, we know you're on the move, and we hope this can keep you just a little more on the move.<br><br></div>
+		<Div class="informers">This is where you can search for topic pages and scroll through the stories connected to that topic.</Div>
+		<div id="search-section">
+			<div id="search-bar-div">
+				<label for="Title">Name:</label><input type="text" id="Title" name="Title" placeholder="Leave blank to search for all">
+			</div>
+			<div id="search-button-div">
+				<button id='search-button' type="button" onclick="InitiateKnower();">Search</button>
+			</div>
+		</div>
+		<div id="know-container">
+
+		</div> 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://bcnnofficial.github.io/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
+	<script src="/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
+	<script src="topics.js"></script>
 	<script>
 		Initiate();
 	</script>
