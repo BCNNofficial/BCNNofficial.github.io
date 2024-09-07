@@ -137,6 +137,13 @@
     {
         color:gray;
     }
+    .no-results
+    {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color:gray;
+    }
 }
 @media (min-aspect-ratio:4/3)
 {
@@ -273,6 +280,13 @@
     }
     .coverage-story-disc
     {
+        color:gray;
+    }
+    .no-results
+    {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
         color:gray;
     }
 }
