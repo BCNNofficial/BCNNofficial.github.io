@@ -510,7 +510,8 @@ div.title a
 		font-size: 30px;
 		font-weight: bold;
 		margin:auto;
-		margin-top: 20px;
+		margin-top: 5px;
+		margin-bottom: 20px;
 		background-color:khaki;
 		border: 5px solid #000000;
 	}
@@ -628,6 +629,7 @@ div.title a
 	}
 	.topic-preceeder
 	{
+		font-weight: bold;
 		font-size:60px;
 		line-height: 60px;
 		position:relative;
@@ -637,6 +639,7 @@ div.title a
 	}
 	.topic-header
 	{
+		font-weight: bold;
 		font-size:180px;
 		line-height: 140px;
 		position:relative;
@@ -698,7 +701,6 @@ div.title a
 		text-align: center;
 		font-size:50px;
 		font-stretch:condensed;
-		font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial";
 	}
 	.topic-storybox
 	{
@@ -723,6 +725,7 @@ div.title a
 		line-height: 45px;
 		text-align: justify;
 		color:#151515;
+		margin-bottom: 50px;
 	}
 	.topic-subsection-title
 	{
@@ -732,6 +735,8 @@ div.title a
 		line-height: 60px;
 		font-weight: bold;
 		font-style: italic;
+		margin-top: 125px;
+		margin-bottom: 50px;
 	}
 	.footnote
 	{
@@ -765,10 +770,18 @@ div.title a
 		font-size:30px;
 		font-weight: bold;
 	}
+	.topic-stories-collection
+	{
+		margin-bottom: 100px;
+	}
 	/**/
 }
 @media (min-aspect-ratio: 4/3) /*width longer than height (larger than 1+)*/
 {
+	.topic-stories-collection
+	{
+		margin-bottom: 80px;
+	}
 	.topics-tab
 	{
 		position:fixed;
@@ -781,6 +794,7 @@ div.title a
 	}
 	.topic-preceeder
 	{
+		font-weight: bold;
 		font-size:40px;
 		line-height: 50px;
 		position:relative;
@@ -788,6 +802,7 @@ div.title a
 	}
 	.topic-header
 	{
+		font-weight: bold;
 		font-size:160px;
 		line-height: 100px;
 		position:relative;
@@ -852,9 +867,12 @@ div.title a
 		line-height: 28px;
 		text-align: justify;	
 		color:#151515;
+		margin-bottom: 30px;
 	}
 	.topic-subsection-title
 	{
+		margin-top: 60px;
+		margin-bottom: 15px;
 		font-size:50px;
 		line-height: 120px;
 		font-weight: bold;
@@ -961,13 +979,15 @@ div.title a
 	}
 	.story-body-image
 	{
-		max-width:100%;
+		width:100%;
 		margin:auto;
+		margin-top: 50px;
 	}
 	.story-image-caption
 	{
 		font-size:25px;
 		font-weight: bold;
+		margin-bottom: 50px;
 	}
 	.story-body-text
 	{
@@ -975,12 +995,15 @@ div.title a
 		font-size:34px;
 		line-height: 44px;
 		color:#212121;
+		margin-bottom: 40px;
 	}
 	.story-subsection-title
 	{
-		font-size:45px;
+		font-size:55px;
 		font-weight:bold;
 		font-style:italic;
+		margin-top: 100px;
+		margin-bottom: 50px;
 	}
 	.story-disclaimer
 	{
@@ -1044,6 +1067,7 @@ div.title a
 	.story-social-media-icon
 	{
 		display:inline-block;
+		margin-left:10px;
 	}
 	.story-social-media-icon-button
 	{
@@ -1059,11 +1083,13 @@ div.title a
 	.story-body-image
 	{
 		max-width:100%;
+		margin-top: 50px;
 	}
 	.story-image-caption
 	{
 		font-size:20px;
 		font-weight: bold;
+		margin-bottom: 50px;
 	}
 	.story-body-text
 	{
@@ -1071,12 +1097,15 @@ div.title a
 		font-size:20px;
 		line-height: 30px;
 		color:#212121;
+		margin-bottom: 30px;
 	}
 	.story-subsection-title
 	{
-		font-size:30px;
+		font-size:35px;
 		font-weight:bold;
 		font-style:italic;
+		margin-top: 70px;
+		margin-bottom: 35px;
 	}
 	/*This is stuff related to stuff to the right*/
 	.story-right-material
