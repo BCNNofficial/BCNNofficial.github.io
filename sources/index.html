@@ -3,17 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>BCNN: Sources</title>
-<link href="https://bcnnofficial.github.io/bcnn.css" rel="stylesheet" type="text/css">
+<link href="/bcnn.css" rel="stylesheet" type="text/css">
+<link href="sources.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<div class="totalinformer">
-		<h1 class="title_text">Our Sources</h1>
-		<p class="informers">At BCNN, you don't JUST have to trust us. We are all about transparency, so when it comes to what we have in our files, we want you to have the full scoop. This includes historical records, business reports, recordings, original transcripts, and anything else you can come up with. We want you to have it all. Because when you have it all, everyone has it all.</p>
-		<br>
+		<div class="title_text">Sources</div>
+		<div class="informers">At BCNN, you don't JUST have to trust us. We are all about transparency, so when it comes to what we have in our files, we want you to have the full scoop. This includes historical records, business reports, recordings, original transcripts, and anything else you can come up with. We want you to have it all. Because when you have it all, everyone has it all.<br><br></div>
+		<Div class="informers">This is where you can search for and look through all of our insider sources that help us provide quality and accurate information.</Div>
+		<div id="search-section">
+			<div id="search-bar-div">
+				<label for="Title">Name:</label><input type="text" id="Title" name="Title" placeholder="Leave blank to search for all">
+			</div>
+			<div id="search-button-div">
+				<button id='search-button' type="button" onclick="InitiateKnower();">Search</button>
+			</div>
+		</div>
+		<div id="know-container">
+		</div> 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://bcnnofficial.github.io/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
+	<script src="/bcnn.js"></script>
+	<script src="sources.js"></script>
 	<script>
 		Initiate();
 	</script>
