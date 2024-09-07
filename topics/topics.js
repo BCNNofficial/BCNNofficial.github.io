@@ -3,19 +3,33 @@ var ourCoverage = [];
 function InitiateKnower()
 {
     $(".coverage-box").remove();
+    $(".no-results").remove();
 
     var container = document.getElementById("know-container");
     var searchBar = document.getElementById("Title");
     var searchfor = searchBar.value;
-    searchfor = searchfor.toUpperCase();
-    var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
+    if(searchfor != "")
+    {
+        searchfor = titleCase(searchfor)
+        tempStor = searchfor; //console.log(tempStor);
+        searchfor = EarthHyphen(searchfor); //console.log(searchfor == undefined);
+        if (searchfor == undefined) {searchfor = tempStor}
+        var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
+    }
+    console.log(queryString);
 
     function sheetDataHandler(sheetData)
     {
+        if (sheetData.length<1)
+        {
+            var noResults = document.createElement("div");
+            container.appendChild(noResults);
+            noResults.innerHTML = "&ensp;Bust. Your search turned up no results.";
+            noResults.classList.add("no-results");
+        }
         for (var i = 0; i < sheetData.length; i++)
         {
-            //console.log(sheetData)
-
+            
             var coverageBox = document.createElement("div");
             container.appendChild(coverageBox);
             coverageBox.classList.add("coverage-box");
@@ -109,7 +123,7 @@ function InitiateKnower()
             getSheetData({
                 sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
                 sheetName: sheetData[i].name,
-                query: queryString,
+                query: "SELECT *",
                 callback: sheetDataHandler2,
             });
         }
@@ -134,3 +148,50 @@ function InitiateKnower()
         });
     }
 }
+
+//from https://stackoverflow.com/questions/32589197/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string-using-javascript
+function titleCase(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        // You do not need to check if i is larger than splitStr length, as your for does that for you
+        // Assign it back to the array
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+    }
+    // Directly return the joined string
+    return splitStr.join(' '); 
+ }
+ 
+ function EarthHyphen(str)
+ {
+    for (var i = 1; i <= 8; i++)
+    {
+        var nameCheck = "Earth " + i;
+        if (nameCheck == str)
+        {
+            return ("Earth-"+i);
+            break;
+        }
+    }
+    numberWord = ["one","two","three","four","five","six","seven","eight"]
+    numberWordCap = ["One","Two","Three","Four","Five","Six","Seven","Eight"]
+    for (var i = 0; i < 8; i++)
+    {
+        var nameCheck = "Earth " + numberWordCap[i];
+        if(nameCheck == str)
+        {
+            var myNum = i+1;
+            return ("Earth-"+myNum);
+            break;
+        }
+    }
+    for (var i = 0; i < 8; i++)
+        {
+            var nameCheck = "Earth-" + numberWord[i];
+            if(nameCheck == str)
+            {
+                var myNum = i+1;
+                return ("Earth-"+myNum);
+                break;
+            }
+        }
+ }
