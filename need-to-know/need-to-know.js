@@ -12,6 +12,13 @@ function InitiateKnower()
 
     function sheetDataHandler(sheetData)
     {
+        if (sheetData.length<1)
+        {
+            var noResults = document.createElement("div");
+            container.appendChild(noResults);
+            noResults.innerHTML = "&ensp;Bust. Your search turned up no results.";
+            noResults.classList.add("no-results");
+        }
         for (var i = 0; i < sheetData.length; i++)
         {
             var coverageBox = document.createElement("div");
@@ -102,7 +109,7 @@ function InitiateKnower()
             getSheetData({
                 sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
                 sheetName: sheetData[i].name,
-                query: queryString,
+                query: "SELECT *",
                 callback: sheetDataHandler2,
             });
         }
