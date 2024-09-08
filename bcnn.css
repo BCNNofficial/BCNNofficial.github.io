@@ -1,8 +1,57 @@
 @charset "utf-8";
 /*Effects to text itself*/
+@font-face {
+	font-family: Choice;
+	src: url(fonts/ARIAL.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-weight: bold;
+	src: url(fonts/ARIALBD.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-weight: bold;
+	font-style: italic;
+	src: url(fonts/ARIALBI.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-style: italic;
+	src: url(fonts/ARIALI.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-stretch: condensed;
+	src: url(fonts/ARIALN.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-weight: bold;
+	font-stretch: condensed;
+	src: url(fonts/ARIALNB.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-weight: bold;
+	font-style: italic;
+	font-stretch: condensed;
+	src: url(fonts/ARIALNBI.TTF)
+}
+@font-face {
+	font-family: Choice;
+	font-style: italic;
+	font-stretch: condensed;
+	src: url(fonts/ARIALNI.TTF);
+}
+@font-face {
+	font-family: Choice;
+	font-stretch: expanded;
+	src: url(fonts/ARIBLK.TTF);
+}
 body 
 {
-	font-family: Arial;
+	font-family: Choice;
 	text-size-adjust: none;
 	margin:0px;
 }
@@ -65,7 +114,7 @@ div.choice span
 	text-align: center;
 	font-size:30px;
 	font-stretch:condensed;
-	font-family: "Helvetica","Arial";
+	font-family: Choice;
 	/*"Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial"*/
 }
 div.choice span div a
@@ -136,6 +185,7 @@ div.title a
 	z-index:10;
 	font-weight: bolder;
 	letter-spacing: -5px;
+	/*font-stretch: expanded;*/
 }
 .choice {
 	background: rgba(255,137,0,1.00);
@@ -846,7 +896,7 @@ div.title a
 		text-align: center;
 		font-size:30px;
 		font-stretch:condensed;
-		font-family: "Franklin Gothic","Verdana","Microsoft Sans Serif Regular","Helvetica","Arial"
+		font-family: Choice;
 	}
 	.topic-storybox
 	{
