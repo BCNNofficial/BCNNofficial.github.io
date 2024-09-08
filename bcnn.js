@@ -492,8 +492,8 @@ function ReturnRandomNews(myDataSheet) {
   var StoryNum = 0;
   var bottomMenu1 = ["Need to Know", "Happening NOW", "Topics", "Find a Story"];
   var bottomMenu1Links = ["#","#","#","#"];
-  var bottomMenu2 = ["Contact Us","Q&amp;A", "Need Help?"];
-  var bottomMenu2Links = ["#","#","#"];
+  var bottomMenu2 = ["Contact Us","Q&amp;A", "Need Help?","Feedback"];
+  var bottomMenu2Links = ["#","#","#","#"];
   var bottomMenu3 = ["About Us"];
   var bottomMenu3Links = ["#"];
   function GenerateEndStuff()
