@@ -130,11 +130,12 @@ div.title a
 	position:fixed; 
 	left:0px; 
 	top:0px;
-	font-size: 60px; 
+	font-size: 80px; 
 	text-align: center;  
 	line-height: 100px; 
-	text-shadow: 3.5px 0 #000000;
-	z-index:10
+	z-index:10;
+	font-weight: bolder;
+	letter-spacing: -5px;
 }
 .choice {
 	background: rgba(255,137,0,1.00);
@@ -524,7 +525,7 @@ div.title a
 	}
 	.end-storybox-proclaimer
 	{
-		font-size: 50px;
+		font-size: 3vw;
 		font-weight: bold;
 		font-style:italic;
 	}
