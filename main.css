@@ -6,7 +6,7 @@
         font-weight: bold;
         letter-spacing: -2px;
         background-color: rgb(255, 213, 157);
-        margin-top: 180px;
+        margin-top: 380px;
         color:black;
         border-top: 7px solid black;
         border-bottom: 7px solid black;
@@ -20,9 +20,300 @@
     }
     .home-subheader
     {
+        width:95%;
+        margin:auto;
         margin-top: 10px;
         text-align: center;
+        font-style: italic; 
+        font-weight: bold;
+        font-size: 50px;
+        color:rgb(39, 39, 39);
+        line-height: 42px;
+    }
+    .home-unsure-container
+    {
+        width:100%;
+        margin:auto;
+        margin-top: 300px;
+        margin-bottom: 300px;
+        background-image: linear-gradient(to right, rgba(232,218,213,1.00), rgb(200, 234, 255), rgba(232,218,213,1.00));
+        border-top: 4px solid gray;
+        border-bottom: 4px solid gray;
+    }
+    .home-unsure
+    {
+        width:85%;
+        margin:auto;
+        text-align: center;
+        font-size: 40px;
+        padding:50px;
+    }
+    .home-question-container
+    {
+        width:100%;
+        margin:auto;
+        margin-top: 300px;
+        margin-bottom: 300px;
+        background-image: linear-gradient(to right, rgba(232,218,213,1.00), rgb(255, 240, 200), rgba(232,218,213,1.00));
+        border-top: 4px solid gray;
+        border-bottom: 4px solid gray;
+    }
+    .home-question
+    {
+        width:85%;
+        margin:auto;
+        text-align: center;
+        font-size: 40px;
+        padding:50px;
+    }
+    .home-help-container
+    {
+        width:100%;
+        margin:auto;
+        margin-top: 300px;
+        margin-bottom: 300px;
+        background-image: linear-gradient(to right, rgba(232,218,213,1.00), rgb(255, 200, 200), rgba(232,218,213,1.00));
+        border-top: 4px solid gray;
+        border-bottom: 4px solid gray;
+    }
+    .home-help
+    {
+        width:85%;
+        margin:auto;
+        text-align: center;
+        font-size: 40px;
+        padding:50px;
+    }
+    .home-good-container
+    {
+        width:100%;
+        margin:auto;
+        margin-top: 150px;
+        margin-bottom: 100px;
+        background-image: linear-gradient(to right, rgba(232,218,213,1.00), rgb(200, 255, 224), rgba(232,218,213,1.00));
+        border-top: 4px solid gray;
+        border-bottom: 4px solid gray;
+    }
+    .home-good
+    {
+        width:85%;
+        margin:auto;
+        text-align: center;
+        font-size: 40px;
+        padding:50px;
+    }
+    /*STORY CONTAINER*/
+    .home-featured-story-container
+    {
+        width:85%;
+        height:600px;
+        margin:auto;
+        background-image: linear-gradient(to right, rgb(193, 193, 193), rgb(144, 144, 144));
+        border: 8px solid black;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .home-featured-story-proclaimer
+    {
+        font-weight: bold;
         font-style: italic;
+        font-size: 7vw;
+        text-align: center;
+        line-height: 5.8vw;
+        padding: 10px;
+    }
+    .home-featured-story-subcontainer
+    {
+        width:90%;
+        margin:auto;
+        height:438px;
+        background-color: rgba(0, 0, 0, 0.096);
+        border:4px solid black;
+        overflow-y: scroll;
+    }
+    .home-featured-story-title
+    {
+        width:98%;
+        margin:auto;
+        font-weight: bold;
+        font-stretch: condensed;
+        font-size: 4vw;
+        color:rgb(49, 0, 67);
+    }
+    .story-featured-story-subsubcontainer
+    {
+        width:98%;
+        margin:auto;
+    }
+    .home-featured-story-image-container
+    {
+        width:40%;
+        float: left;
+        margin-left:1vw;
+        margin-right: 1.5vw;
+        margin-top: 1.5vw;
+    }
+    .home-featured-story-image
+    {
+        width:100%;
+        border:3px solid black;
+    }
+    .home-featured-story-text
+    {
+        font-size: 3vw;
+        height:20%;
+        color:rgb(44, 44, 44);
+    }
+    /*TOPIC CONTAINER*/
+    .home-featured-topic-container
+    {
+        width:85%;
+        height:600px;
+        margin:auto;
+        background-image: linear-gradient(to right, rgb(189, 205, 187), rgb(144, 158, 142));
+        border: 8px solid black;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .home-featured-topic-proclaimer
+    {
+        font-weight: bold;
+        font-style: italic;
+        font-size: 6vw;
+        text-align: center;
+        line-height: 5.8vw;
+        padding: 10px;
+    }
+    .home-featured-topic-subcontainer
+    {
+        width:90%;
+        margin:auto;
+        height:438px;
+        background-color: rgba(0, 0, 0, 0.096);
+        border:4px solid black;
+        overflow-y: scroll;
+    }
+    .home-featured-topic-title
+    {
+        width:98%;
+        margin:auto;
+        font-weight: bold;
+        font-stretch: condensed;
+        font-size: 4vw;
+        color:rgb(49, 0, 67);
+    }
+    .story-featured-topic-subsubcontainer
+    {
+        width: 98%;
+        margin:auto;
+    }
+    .home-featured-topic-image-container
+    {
+        width:40%;
+        float: left;
+        margin-left:1vw;
+        margin-right: 1.5vw;
+        margin-top: 1.5vw;
+    }
+    .home-featured-topic-image
+    {
+        width:100%;
+        border:3px solid black;
+    }
+    .home-featured-topic-text
+    {
+        font-size: 3vw;
+        height:20%;
+        color:rgb(44, 44, 44);
+    }
+    /*SOURCES CONTAINER*/
+    .home-featured-source-container
+    {
+        width:85%;
+        height:600px;
+        margin:auto;
+        background-image: linear-gradient(to right, rgb(205, 187, 187), rgb(158, 142, 142));
+        border: 8px solid black;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .home-featured-source-proclaimer
+    {
+        font-weight: bold;
+        font-style: italic;
+        font-size: 6vw;
+        text-align: center;
+        line-height: 5.8vw;
+        padding: 10px;
+    }
+    .home-featured-source-subcontainer
+    {
+        width:90%;
+        margin:auto;
+        height:438px;
+        background-color: rgba(0, 0, 0, 0.096);
+        border:4px solid black;
+        overflow-y: scroll;
+    }
+    .home-featured-source-title
+    {
+        width:98%;
+        margin:auto;
+        font-weight: bold;
+        font-stretch: condensed;
+        font-size: 4vw;
+        color:rgb(49, 0, 67);
+    }
+    .story-featured-source-subsubcontainer
+    {
+        width:98%;
+        margin:auto;
+    }
+    .home-featured-source-image-container
+    {
+        width:40%;
+        float: left;
+        margin-left:1vw;
+        margin-right: 1.5vw;
+        margin-top: 1.5vw;
+    }
+    .home-featured-source-image
+    {
+        width:100%;
+        border:3px solid black;
+    }
+    .home-featured-source-text
+    {
+        font-size: 3.5vw;
+        height:20%;
+        color:rgb(44, 44, 44);
+    }
+}
+@media (min-aspect-ratio: 4/3)
+{
+    .home-header
+    {
+        text-align: center;
+        font-weight: bold;
+        /*background-color: rgb(255, 213, 157);*/
+        margin-top: 180px;
+        color:black;
+        /*
+        border-top: 7px solid black;
+        border-bottom: 7px solid black;*/
+    }
+    .home-header-container
+    {
+        margin:auto;
+        font-size: 8vw;
+    }
+    .home-subheader
+    {
+        width:90%;
+        margin:auto;
+        margin-top: 10px;
+        text-align: center;
+        font-style: italic; 
         font-weight: bold;
         font-size: 50px;
         color:rgb(39, 39, 39);
@@ -115,7 +406,7 @@
     {
         font-weight: bold;
         font-style: italic;
-        font-size: 7vw;
+        font-size: 4vw;
         text-align: center;
         line-height: 5.8vw;
         padding: 10px;
@@ -131,18 +422,21 @@
     }
     .home-featured-story-title
     {
+        width:98%;
+        margin:auto;
         font-weight: bold;
         font-stretch: condensed;
-        font-size: 4vw;
+        font-size: 3vw;
         color:rgb(49, 0, 67);
     }
     .story-featured-story-subsubcontainer
     {
-
+        width:98%;
+        margin:auto;
     }
     .home-featured-story-image-container
     {
-        width:40%;
+        width:30%;
         float: left;
         margin-left:1vw;
         margin-right: 1.5vw;
@@ -155,7 +449,7 @@
     }
     .home-featured-story-text
     {
-        font-size: 3vw;
+        font-size: 1.9vw;
         height:20%;
         color:rgb(44, 44, 44);
     }
@@ -174,7 +468,7 @@
     {
         font-weight: bold;
         font-style: italic;
-        font-size: 6vw;
+        font-size: 3.45vw;
         text-align: center;
         line-height: 5.8vw;
         padding: 10px;
@@ -190,18 +484,21 @@
     }
     .home-featured-topic-title
     {
+        width:98%;
+        margin:auto;
         font-weight: bold;
         font-stretch: condensed;
-        font-size: 4vw;
+        font-size: 3vw;
         color:rgb(49, 0, 67);
     }
     .story-featured-topic-subsubcontainer
     {
-
+        width: 98%;
+        margin:auto;
     }
     .home-featured-topic-image-container
     {
-        width:40%;
+        width:30%;
         float: left;
         margin-left:1vw;
         margin-right: 1.5vw;
@@ -214,7 +511,7 @@
     }
     .home-featured-topic-text
     {
-        font-size: 3vw;
+        font-size: 1.9vw;
         height:20%;
         color:rgb(44, 44, 44);
     }
@@ -233,7 +530,7 @@
     {
         font-weight: bold;
         font-style: italic;
-        font-size: 6vw;
+        font-size: 3.5vw;
         text-align: center;
         line-height: 5.8vw;
         padding: 10px;
@@ -249,18 +546,21 @@
     }
     .home-featured-source-title
     {
+        width:98%;
+        margin:auto;
         font-weight: bold;
         font-stretch: condensed;
-        font-size: 4vw;
+        font-size: 3vw;
         color:rgb(49, 0, 67);
     }
     .story-featured-source-subsubcontainer
     {
-
+        width:98%;
+        margin:auto;
     }
     .home-featured-source-image-container
     {
-        width:40%;
+        width:30%;
         float: left;
         margin-left:1vw;
         margin-right: 1.5vw;
@@ -273,12 +573,8 @@
     }
     .home-featured-source-text
     {
-        font-size: 3.5vw;
+        font-size: 1.9vw;
         height:20%;
         color:rgb(44, 44, 44);
     }
-}
-@media (min-aspect-ratio: 4/3)
-{
-
 }
