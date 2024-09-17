@@ -491,11 +491,11 @@ function ReturnRandomNews(myDataSheet) {
   //THIS IS FOR GENERATING THUMBNAILS
   var StoryNum = 0;
   var bottomMenu1 = ["Need to Know", "Happening NOW", "Topics", "Find a Story"];
-  var bottomMenu1Links = ["#","#","#","#"];
+  var bottomMenu1Links = ["https://bcnnofficial.github.io/need-to-know/","https://bcnnofficial.github.io/happening-NOW/","https://bcnnofficial.github.io/topics/","https://bcnnofficial.github.io/find-a-story/"];
   var bottomMenu2 = ["Contact Us","Q&amp;A", "Need Help?","Feedback"];
-  var bottomMenu2Links = ["#","#","#","#"];
-  var bottomMenu3 = ["About Us"];
-  var bottomMenu3Links = ["#"];
+  var bottomMenu2Links = ["https://bcnnofficial.github.io/contact-us/","https://bcnnofficial.github.io/q-and-a/","https://bcnnofficial.github.io/need-help/","https://bcnnofficial.github.io/feedback/"];
+  var bottomMenu3 = ["Sources", "About Us"];
+  var bottomMenu3Links = ["https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"];
   function GenerateEndStuff()
 {
 	StoryNum = 0;
