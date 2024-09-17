@@ -1,5 +1,57 @@
 function HomePageStuff()
 {
+    //actually first, fill in the 5 most recent stories
+
+    function sheetDataHandlerTop(sheetData)
+    {
+        console.log("Entdered the functon");
+
+        var container = document.getElementById("HLSSSC");
+        console.log(container);
+
+        for (var i = (sheetData.length-1); i > (sheetData.length-6); i--)
+        {
+            var storyLink = document.createElement("a");
+            container.appendChild(storyLink);
+            storyLink.setAttribute("href", sheetData[i].link);
+
+            var storyContainer = document.createElement("div");
+            storyLink.appendChild(storyContainer);
+            storyContainer.classList.add("home-latest-story-container");
+
+            var storySubContainer = document.createElement("div");
+            storyContainer.appendChild(storySubContainer);
+            storySubContainer.classList.add("home-lastest-story-subcontainer");
+
+            var storyTitle = document.createElement("div");
+            storySubContainer.appendChild(storyTitle);
+            storyTitle.classList.add("home-latest-story-title");
+            storyTitle.innerHTML = sheetData[i].name;
+
+            var storyDate = document.createElement("div");
+            storySubContainer.appendChild(storyDate);
+            storyDate.classList.add("home-latest-story-date");
+            storyDate.innerHTML = sheetData[i].date;
+
+            var storyImgContainer = document.createElement("div");
+            storySubContainer.appendChild(storyImgContainer);
+            storyImgContainer.classList.add("home-latest-story-img-container");
+            storyImgContainer.innerHTML = "<img class='home-latest-story-img' src='"+sheetData[i].img_link+"' alt='"+sheetData[i].alt+"'>"
+
+            var storyImgCaption = document.createElement("div");
+            storyImgContainer.appendChild(storyImgCaption);
+            storyImgCaption.classList.add("home-latest-story-img-caption");
+            storyImgCaption.innerHTML = sheetData[i].disclaimer;
+        }
+    }
+
+    getSheetData({
+        sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+        sheetName: "All",
+        query: "SELECT *",
+        callback: sheetDataHandlerTop,
+    });
+
     //first fill in the featured story section
 
     function sheetDataHandlerStory(sheetData)
@@ -119,7 +171,7 @@ function HomePageStuff()
         storyTitle.classList.add("home-featured-source-title");
         storyTitle.innerHTML = sheetData[randNum].name;
 
-        var subsubcontainer = document.createElement("div");
+        var subsubcontainer = document.createElement("div"); 
         subcontainer.appendChild(subsubcontainer);
         subsubcontainer.classList.add("story-featured-source-subsubcontainer")
 
