@@ -289,6 +289,75 @@
         height:20%;
         color:rgb(44, 44, 44);
     }
+    /*FOR LATEST STORIES*/
+    .home-latest-stories-container
+    {
+        margin-top: 150px;
+    }
+    .home-latest-stories-proclaimer
+    {
+        text-align: center;
+        font-size: 4.5vw;
+        font-weight: bold;
+    }
+    .home-latest-stories-subcontainer
+    {
+        width:90%;
+        margin:auto;
+        margin-top: 25px;
+        border:6px solid #000000;
+        background-color: rgba(0, 0, 0, 0.205);
+        overflow-x: scroll;
+    }
+    .home-latest-stories-subsubcontainer
+    {
+        width: 3100px;
+    }
+    .home-latest-story-container
+    {
+        width:500px;
+        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+        border: 4px solid #000000;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display:inline-block;
+    }
+    .home-lastest-story-subcontainer
+    {
+        width:95%;
+        margin:auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .home-latest-story-title
+    {
+        font-size: 42px;
+        line-height: 38px;
+        font-weight: bold;
+        font-stretch: condensed;
+    }
+    .home-latest-story-date
+    {
+        color:gray;
+        font-size: 28px;
+        font-stretch: condensed;
+    }
+    .home-latest-story-img-container
+    {
+        width:99%;
+    }
+    .home-latest-story-img
+    {
+        width:100%;
+        border:3px solid gray;
+    }
+    .home-latest-story-img-caption
+    {
+        color:gray;
+        font-size: 22px;
+    }
 }
 @media (min-aspect-ratio: 4/3)
 {
@@ -577,5 +646,73 @@
         font-size: 1.9vw;
         height:20%;
         color:rgb(44, 44, 44);
+    }
+    /*FOR LATEST STORIES*/
+    .home-latest-stories-container
+    {
+        margin-top: 150px;
+    }
+    .home-latest-stories-proclaimer
+    {
+        text-align: center;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    .home-latest-stories-subcontainer
+    {
+        width:90%;
+        margin:auto;
+        margin-top: 25px;
+        border:6px solid #000000;
+        background-color: rgba(0, 0, 0, 0.205);
+        height:400px;
+    }
+    .home-latest-stories-subsubcontainer
+    {
+        
+    }
+    .home-latest-story-container
+    {
+        width:14.397vw;
+        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+        border: 4px solid #000000;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        margin-top: 30px;
+        display:inline-block;
+    }
+    .home-lastest-story-subcontainer
+    {
+        width:95%;
+        margin:auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .home-latest-story-title
+    {
+        font-size: 1.3vw;
+        line-height: 1.3vw;
+        font-weight: bold;
+        font-stretch: condensed;
+    }
+    .home-latest-story-date
+    {
+        color:gray;
+        font-size: 0.8vw;
+        font-stretch: condensed;
+    }
+    .home-latest-story-img-container
+    {
+        width:99%;
+    }
+    .home-latest-story-img
+    {
+        width:100%;
+        border:3px solid gray;
+    }
+    .home-latest-story-img-caption
+    {
+        color:gray;
+        font-size: 22px;
     }
 }
