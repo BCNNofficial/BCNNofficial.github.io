@@ -1,0 +1,135 @@
+@charset "utf-8";
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
+{
+    .info-title
+    {
+        margin:auto;
+        margin-top: 150px;
+        font-weight: bold;
+		color:rgba(0,0,0,1.1); 
+		font-size:80px;
+		width:95%;
+		text-align: center;
+		line-height: 160px;
+    }
+    .info-text
+    {
+        font-size: 35px;
+		text-align: justify;
+		width:95%;
+		margin:auto;
+		line-height: 45px;
+        margin-bottom: 45px;
+    }
+    .info-lister
+    {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 42px;
+    }
+    .info-subtitle
+    {
+        font-size: 55px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 75px;
+    }
+    .info-dissapointer
+    {
+        font-size: 40px;
+        text-align: center;
+        color:gray;
+    }
+    .info-question
+    {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+    }
+    .info-answer
+    {
+        font-size: 35px;
+		text-align: justify;
+		width:95%;
+		margin:auto;
+		line-height: 45px;
+        margin-bottom: 45px;
+        font-style: italic;
+    }
+}
+@media (min-aspect-ratio: 4/3)
+{
+    .info-title
+    {
+        margin-top: 150px;
+        font-weight: bold;
+		color:rgba(0,0,0,1.1); 
+		font-size:80px;
+		line-height:100px;
+		width:85%;
+		position:relative;
+		left:15%;
+    }
+    .info-text
+    {
+        color:rgba(30,12,4,1.00); 
+		line-height:30px; 
+		font-size: 22px;
+		width:55%;
+		position:relative;
+		left:15%;
+        text-align: justify;
+    }
+    .info-lister
+    {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 28px;
+        position:relative;
+        left:18%;
+        width:72%;
+    }
+    .info-subtitle
+    {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 75px;
+        margin-bottom: 50px;
+        position:relative;
+        left:15%;
+        width:85%;
+    }
+    .info-dissapointer
+    {
+        font-size: 28px;
+        color:gray;
+        position:relative;
+        left: 15%;
+        width:85%;
+    }
+    .info-question
+    {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 28px;
+        position:relative;
+        left:18%;
+        width:72%;
+        font-weight: bold;
+    }
+    .info-answer
+    {
+        color:rgba(30,12,4,1.00); 
+		line-height:30px; 
+		font-size: 22px;
+		width:55%;
+		position:relative;
+		left:15%;
+        font-style: italic;
+        text-align: justify;
+    }
+}
