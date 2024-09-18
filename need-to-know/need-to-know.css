@@ -78,7 +78,7 @@
     .coverage-storybox
     {
         width:500px;
-        background-color: white;
+        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
         margin-top: 30px;
         margin-bottom: 30px;
         margin-left:40px;
@@ -207,7 +207,7 @@
     .coverage-storybox
     {
         width:250px;
-        background-color: white;
+        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
         margin-top: 30px;
         margin-bottom: 30px;
         margin-left:20px;
