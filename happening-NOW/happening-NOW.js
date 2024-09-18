@@ -72,3 +72,15 @@ function InitiateHappening ()
         });
     }
 }
+
+function PlaceEnterListener() 
+{
+    console.log("is this even being accessed?")
+    $(document).on("keypress", "#Number", function (e) {
+        console.log("is THIS being accessed?");
+        if (e.key == 'Enter') 
+        {
+            InitiateHappening();
+        }
+    })
+}
