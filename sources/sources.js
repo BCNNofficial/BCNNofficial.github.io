@@ -82,6 +82,18 @@ function InitiateKnower()
     }
 }
 
+function PlaceEnterListener() 
+{
+    console.log("is this even being accessed?")
+    $(document).on("keypress", "#Title", function (e) {
+        console.log("is THIS being accessed?");
+        if (e.key == 'Enter') 
+        {
+            InitiateKnower();
+        }
+    })
+}
+
 //from https://stackoverflow.com/questions/32589197/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string-using-javascript
 function titleCase(str) {
     var splitStr = str.toLowerCase().split(' ');
