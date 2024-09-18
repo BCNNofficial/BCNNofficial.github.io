@@ -5,7 +5,7 @@
     {
         width:90%;
         margin:auto;
-        background-color: #a9bffc;
+        background-image: linear-gradient(to right, #a9bffc, #9ab5ff);
         border:6px solid #000000;
         text-align: center;
         font-size: 35px;
@@ -151,7 +151,7 @@
     {
         width:90%;
         margin:auto;
-        background-color: #a9bffc;
+        background-image: linear-gradient(to right, #a9bffc, #9ab5ff);
         border:6px solid #000000;
         text-align: center;
         font-size: 35px;
