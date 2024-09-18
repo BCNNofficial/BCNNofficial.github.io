@@ -134,3 +134,15 @@ function InitiateKnower()
         });
     }
 }
+
+function PlaceEnterListener() 
+{
+    console.log("is this even being accessed?")
+    $(document).on("keypress", "#Title", function (e) {
+        console.log("is THIS being accessed?");
+        if (e.key == 'Enter') 
+        {
+            InitiateKnower();
+        }
+    })
+}
