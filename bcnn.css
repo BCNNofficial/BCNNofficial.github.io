@@ -456,7 +456,7 @@ div.title a
 	}
 	.end-storybox
 	{
-		background-color: white;
+		background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
 		width:85%;
 		margin:auto;
 		margin-top: 50px;
@@ -581,7 +581,7 @@ div.title a
 	}
 	.end-storybox
 	{
-		background-color: white;
+		background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
 		width:18%;
 		margin-top: 50px;
 		margin-left: 25px;
