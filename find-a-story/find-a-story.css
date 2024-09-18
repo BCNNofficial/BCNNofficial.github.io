@@ -9,7 +9,7 @@
         width:80%;
         margin:auto;
         height:330px;
-        background-color: #a9bffc;
+        background-image: linear-gradient(to right, #a9bffc, #8dabff);
         border:6px solid #000000;
         font-weight: bold;
     }
@@ -64,7 +64,7 @@
         width:80%;
         margin-top: 50px;
         margin-bottom: 50px;
-        background-color: #bcccf8;
+        background-image: linear-gradient(to right, #8dabff, #7da0ff);
         border:4px solid #000000;
     }
     .result-title
@@ -91,8 +91,6 @@
         font-size: 28px;
         font-weight: bold;
         color:gray;
-        position: absolute;
-        left:0px;
     }
 }
 
@@ -105,7 +103,7 @@
         table-layout:fixed;
         margin:auto;
         height:60px;
-        background-color: #a9bffc;
+        background-image: linear-gradient(to right, #a9bffc, #8dabff);
         border:5px solid #000000;
     }
     .type-box-container
@@ -154,7 +152,7 @@
         width:80%;
         margin-top: 30px;
         margin-bottom: 30px;
-        background-color: #bcccf8;
+        background-image: linear-gradient(to right, #8dabff, #7da0ff);
         border:3px solid #000000;
     }
     .result-title
@@ -181,7 +179,5 @@
         font-size: 28px;
         font-weight: bold;
         color:gray;
-        position: absolute;
-        left:0px;
     }
 }
