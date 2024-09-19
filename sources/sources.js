@@ -36,18 +36,22 @@ function InitiateKnower()
             var coverageBox = document.createElement("div");
             container.appendChild(coverageBox);
             coverageBox.classList.add("coverage-box");
-            coverageBox.setAttribute("style", "background-color: "+sheetData[i].color);
+            coverageBox.setAttribute("style", "background-image: linear-gradient(to right, "+sheetData[i].color+", "+sheetData[i].color2+");");
 
             var coverageSubBox = document.createElement("div");
             coverageBox.appendChild(coverageSubBox);
             coverageSubBox.classList.add("coverage-sub");
 
-            if(sheetData.img_link != "none")
+            if(sheetData[i].img_link != "none")
             {
                 var coverageImgDiv = document.createElement("div");
                 coverageSubBox.appendChild(coverageImgDiv);
                 coverageImgDiv.classList.add("coverage-img-div");
-                coverageImgDiv.innerHTML = "<img class='coverage-img' src='"+sheetData[i].img_link+"'><br>"+sheetData[i].disclaimer;
+                coverageImgDiv.innerHTML = "<img class='coverage-img' src='"+sheetData[i].img_link+"'>";
+                if (sheetData[i].disclaimer != null)
+                {
+                    coverageImgDiv.innerHTML += "<br>"+sheetData[i].disclaimer;
+                }
             }
 
             var coverageTitle = document.createElement("div");
