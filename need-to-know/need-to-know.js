@@ -24,7 +24,7 @@ function InitiateKnower()
             var coverageBox = document.createElement("div");
             container.appendChild(coverageBox);
             coverageBox.classList.add("coverage-box");
-            coverageBox.setAttribute("style", "background-color: "+sheetData[i].color);
+            coverageBox.setAttribute("style", "background-image: linear-gradient(to right, "+sheetData[i].color+", "+sheetData[i].color2+");");
 
             var coverageSubBox = document.createElement("div");
             coverageBox.appendChild(coverageSubBox);
