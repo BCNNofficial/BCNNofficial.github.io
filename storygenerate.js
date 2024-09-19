@@ -40,6 +40,12 @@ function GenerateStory (storyName, sheetLink)
                 mySt.classList.add("story-subsection-title");
                 mySt.innerHTML = sheetData[i].info2;
             }
+            else if (myRow == "AD") 
+            {
+                var myAd = document.createElement("div");
+                bodyer.appendChild(myAd);
+                myAd.classList.add("ad-div-mobile-instory "+sheetData[i].info2);
+            }
             else if (myRow == "IMAGE")
             {
                 var imageDiv = document.createElement("div");
