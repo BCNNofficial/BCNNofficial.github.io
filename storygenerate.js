@@ -44,7 +44,8 @@ function GenerateStory (storyName, sheetLink)
             {
                 var myAd = document.createElement("div");
                 bodyer.appendChild(myAd);
-                myAd.classList.add("ad-div-mobile-instory "+sheetData[i].info2);
+                myAd.classList.add("ad-div-mobile-instory");
+                myAd.classList.add(sheetData[i].info2);
             }
             else if (myRow == "IMAGE")
             {
