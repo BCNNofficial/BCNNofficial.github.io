@@ -312,7 +312,7 @@ function FootNote(myID, myString)
 var sidemenuMain = ["<a href='https://bcnnofficial.github.io/need-to-know'>Need to Know</a> <div class='button-div' onclick='ExpandSB0()'><img class='button' src='https://github.com/BCNNofficial/BCNNofficial.github.io/blob/main/expand.png?raw=true' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/happening-NOW'>Happening NOW</a><br>", "<a href='https://bcnnofficial.github.io/topics'>Topics</a> <div class='button-div' onclick='ExpandSB2()'><img class='button' src='https://github.com/BCNNofficial/BCNNofficial.github.io/blob/main/expand.png?raw=true' alt='expand tab'></div><br>", "<a href='https://bcnnofficial.github.io/find-a-story'>Find a Story</a><br>", "<a href='https://bcnnofficial.github.io/sources'>Sources</a><br>", "<a href='https://bcnnofficial.github.io/about-us'>About BCNN</a><br>"]
 
 
-var sidemenuSB0 = ["<a href='https://bcnnofficial.github.io/would-like-to-know'>Would like to know</a><br>"]; var SB0Open = 0;
+var sidemenuSB0 = ["<a href='https://bcnnofficial.github.io/need-to-know/would-like-to-know/'>Would like to know</a><br>"]; var SB0Open = 0;
 var SB2Open = 0;
 var sidemenuopened = 0;
 
