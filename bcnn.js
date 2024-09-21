@@ -227,7 +227,7 @@ function Initiate()
 
 	GenerateEndStuff();
 
-	SetSidebarMaterial();
+	//SetSidebarMaterial();
 
 	InputAd("ads-all", "All");
 }
@@ -604,6 +604,8 @@ function ReturnRandomNews(myDataSheet) {
 //THIS IS FOR ADS
 function InputAd (myClass, mySheet)
 {
+	SetSidebarMaterial();
+
 	var adDivs = document.getElementsByClassName(myClass);
 	console.log(adDivs);
 
@@ -751,7 +753,7 @@ function FillWithStories (myID, mySheet)
 	
 	function GenerateStory(sheetData)
 	{
-		var container = document.getElementById(myID);
+		var container = document.getElementsByClassName(myID)[0];
 
 		console.log(myID, mySheet);
 
@@ -801,4 +803,21 @@ function FillWithStories (myID, mySheet)
 		query: 'SELECT *',
 		callback: GenerateStory,
 	});
+}
+
+
+function waitToExecute(waitTime, classToCheck, theFunction, para1, para2) {
+	setTimeout(function () {
+		var myDivs = document.getElementsByClassName(classToCheck);
+		console.log(myDivs);
+		console.log(myDivs.length);
+		if (myDivs.length == 0) 
+		{
+			waitToExecute(waitTime, classToCheck, theFunction, para1, para2);
+		} 
+		else 
+		{
+			theFunction(para1, para2);
+		}
+	}, waitTime)
 }
