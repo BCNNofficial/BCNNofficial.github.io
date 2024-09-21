@@ -818,7 +818,7 @@ function waitToExecute(waitTime, classToCheck, theFunction, para1, para2) {
 		var myDivs = document.getElementsByClassName(classToCheck);
 		console.log(myDivs);
 		console.log(myDivs.length);
-		if (myDivs.length == 0 || count == 5) 
+		if (myDivs.length == 0 || count != 5) 
 		{
 			count++;
 			waitToExecute(waitTime, classToCheck, theFunction, para1, para2);
