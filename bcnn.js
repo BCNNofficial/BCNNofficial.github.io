@@ -180,6 +180,12 @@ function MoveFromT2Tab ()
 
 function Initiate()
 {
+	link = document.createElement('link');
+   	link.rel = 'icon';
+   	document.head.appendChild(link);
+	link.href = '/BCNN square logo 64.png'
+	
+	
 	function sheetDataHandler(sheetData) {
 		//console.log("sheet data: ", sheetData);
 		for (var i = 0; i < sheetData.length; i++)
