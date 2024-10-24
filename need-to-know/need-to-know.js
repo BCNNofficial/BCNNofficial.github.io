@@ -63,7 +63,7 @@ function InitiateKnower()
     
                     if ((window.innerWidth * 3 / 4) > (window.innerHeight))
                     {
-                        var myWidth = sheetData2.length * 290 + 40;
+                        var myWidth = sheetData2.length * 300 + 40;
                         thisContainer.setAttribute("style", "width: "+myWidth+"px");
                     }
                     else
