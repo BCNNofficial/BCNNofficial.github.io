@@ -127,7 +127,7 @@ function GenerateStory (storyName, sheetLink)
         var notified = document.createElement("div");
         storyEndDiv.appendChild(notified);
         notified.classList.add("sign-up-container");
-        notified.innerHTML += "<div class='sign-up-text'><br>WANT TO BE NOTIFIED OF FUTURE BCNN STORIES? SHOOT AN EMAIL TO <SPAN style='color:darkblue'>BCNNOFFICIAL@GMAIL.COM</SPAN> SAYING ANYTHING AT ALL AND WE WILL SEND YOU WEEKLY UPDATES ON OUR NEWS UNTIL YOU FORCE US TO STOP.<br><br></div>";
+        notified.innerHTML += "<div class='sign-up-text'><br>WANT TO BE NOTIFIED OF FUTURE BCNN STORIES? CLICK <a href='https://docs.google.com/forms/d/e/1FAIpQLSdYf87ie_UYGgL8p2K6c1yHvJavSYdxY3AxM_K0WLqIBYzkpg/viewform?usp=sf_link'>HERE</a> TO JOIN THE OFFICIAL BCNN NEWSLETTER AND RECIEVE KEY BCNN INFORMATION FOR THE REST OF YOUR LIFE.<br><br></div>";
     
         storyEndDiv.innerHTML += "<br><br>";
 
