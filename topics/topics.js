@@ -82,7 +82,7 @@ function InitiateKnower()
                     }
                     else
                     {
-                        var myWidth = sheetData2.length * 580 + 50;
+                        var myWidth = sheetData2.length * 590 + 50;
                         thisContainer.setAttribute("style", "width: "+myWidth+"px");
                     }
 
