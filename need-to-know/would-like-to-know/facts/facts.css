@@ -1,0 +1,83 @@
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3) {
+    .facts-header-container {
+
+    }
+    .facts-topics-list {
+
+    }
+    .facts-body-container {
+
+    }
+    .facts-body-text {
+
+    }
+    .facts-subsection-title {
+
+    }
+    .facts-image-and-caption {
+
+    }
+    .facts-image-caption {
+
+    }
+    .facts-body-image {
+
+    }
+    .facts-topic {
+
+    }
+    .facts-title {
+
+    }
+    .facts-writing-details {
+
+    }
+    .facts-writing-details-text {
+
+    }
+    .facts-author {
+
+    }
+}
+
+@media (min-aspect-ratio: 4/3) {
+    .facts-header-container {
+
+    }
+    .facts-topics-list {
+
+    }
+    .facts-body-container {
+
+    }
+    .facts-body-text {
+
+    }
+    .facts-subsection-title {
+
+    }
+    .facts-image-and-caption {
+
+    }
+    .facts-image-caption {
+
+    }
+    .facts-body-image {
+
+    }
+    .facts-topic {
+
+    }
+    .facts-title {
+
+    }
+    .facts-writing-details {
+
+    }
+    .facts-writing-details-text {
+
+    }
+    .facts-author {
+        
+    }
+}
