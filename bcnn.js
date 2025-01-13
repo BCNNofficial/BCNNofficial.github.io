@@ -1,5 +1,5 @@
-var alltabs = ["Need to Know", "Topics", "Find a Story", "Sources", "About BCNN"];
-var alltabslinks = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/about-us/"]
+var alltabs = ["Need to Know", "Topics", "Find a Story", "Sources", "<strong>WLTK</strong>", "About BCNN"];
+var alltabslinks = ["https://bcnnofficial.github.io/need-to-know/", "https://bcnnofficial.github.io/topics/", "https://bcnnofficial.github.io/find-a-story/", "https://bcnnofficial.github.io/sources/", "https://bcnnofficial.github.io/need-to-know/would-like-to-know/", "https://bcnnofficial.github.io/about-us/"]
 
 var T2Tabs = ["Phillip Ball", "Earth 3", "Business Prison", "Prison Planet"];
 var T2TabsL = ["http://bcnnofficial.github.io/topics/phillip-ball", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404", "https://bcnnofficial.github.io/error-404"];
@@ -647,12 +647,19 @@ function SetSidebarMaterial()
 	var rightBarArray = document.getElementsByClassName("story-right-material");
 	var rightBar = rightBarArray[0];
 	var bodyArray = document.getElementsByClassName("story-body-container");
-	console.log(bodyArray);
+	if (bodyArray.length == 0) {
+		console.log("iaoetsnaetrsoinatersointaeroisntaeoirstainorets")
+		bodyArray = document.getElementsByClassName("facts-body-container");
+	}
+	console.log("body array length " + bodyArray.length);
 	var bodyRect = bodyArray[0].getBoundingClientRect();
 	var myHeight = (bodyRect.bottom - bodyRect.top);
 	//rightBar.setAttribute("style","height:"+myHeight+"px");
 
 	var ourTopicElements = document.getElementsByClassName("story-topic");
+	if (ourTopicElements == null) {
+		ourTopicElements = document.getElementsByClassName("facts-topic");
+	}
 	var ourTopics = [ourTopicElements[0].innerHTML]
 	if (ourTopicElements.length > 1)
 	{
