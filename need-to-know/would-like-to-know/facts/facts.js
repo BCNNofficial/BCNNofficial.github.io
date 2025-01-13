@@ -23,6 +23,8 @@ function GenerateFacts (storyName, sheetLink)
         var isComSec = false;
         var comSecLink = "none";
 
+        var myType;
+
         for (var i = 0; i < storySize; i++)
         {
             var myRow = sheetData[i].info1
@@ -76,8 +78,15 @@ function GenerateFacts (storyName, sheetLink)
                 var myTitle = document.createElement("div");
                 header.appendChild(myTitle);
                 myTitle.classList.add("facts-title");
-                myTitle.innerHTML = sheetData[i].info2;
-
+                if(myType == "LIST") {
+                    myTitle.innerHTML = "<span class='facts-type facts-list'>" + myType + "</span>" + sheetData[i].info2;
+                }  
+                if(myType == "OPINION") {
+                    myTitle.innerHTML = "<span class='facts-type facts-opinion'>" + myType + "</span>" + sheetData[i].info2;  
+                }
+                if(myType == "FOOD REVIEW") {
+                    myTitle.innerHTML = "<span class='facts-type facts-food-review'>" + myType + "</span>" + sheetData[i].info2;
+                }
                 var headerDetails = document.createElement("div");
                 header.appendChild(headerDetails);
                 headerDetails.classList.add("facts-writing-details");
@@ -112,10 +121,7 @@ function GenerateFacts (storyName, sheetLink)
                 comSecLink = sheetData[i].info2;
             }
             else if (myRow == "TYPE") {
-                var myType = document.createElement("div");
-                document.body.appendChild(myType);
-                myType.classList.add("facts-type");
-                myType.innerHTML = sheetData[i].info2; 
+                myType = sheetData[i].info2;
             }
         }
 
