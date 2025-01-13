@@ -648,16 +648,18 @@ function SetSidebarMaterial()
 	var rightBar = rightBarArray[0];
 	var bodyArray = document.getElementsByClassName("story-body-container");
 	if (bodyArray.length == 0) {
-		console.log("iaoetsnaetrsoinatersointaeroisntaeoirstainorets")
+		console.log("not a story page, but a facts page")
 		bodyArray = document.getElementsByClassName("facts-body-container");
 	}
 	console.log("body array length " + bodyArray.length);
+	console.log(bodyArray);
 	var bodyRect = bodyArray[0].getBoundingClientRect();
 	var myHeight = (bodyRect.bottom - bodyRect.top);
 	//rightBar.setAttribute("style","height:"+myHeight+"px");
 
 	var ourTopicElements = document.getElementsByClassName("story-topic");
-	if (ourTopicElements == null) {
+	if (ourTopicElements.length == 0) {
+		console.log("again, not a story page, but a facts page")
 		ourTopicElements = document.getElementsByClassName("facts-topic");
 	}
 	var ourTopics = [ourTopicElements[0].innerHTML]
