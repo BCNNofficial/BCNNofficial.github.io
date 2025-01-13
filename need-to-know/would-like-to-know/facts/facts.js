@@ -79,7 +79,7 @@ function GenerateFacts (storyName, sheetLink)
                 header.appendChild(myTitle);
                 myTitle.classList.add("facts-title");
                 if(myType == "LIST") {
-                    myTitle.innerHTML = "<span class='facts-type facts-list'>" + myType + "</span>" + sheetData[i].info2;
+                    myTitle.innerHTML = "<span class='facts-type facts-list'>" + myType + ":</span> " + sheetData[i].info2;
                 }  
                 if(myType == "OPINION") {
                     myTitle.innerHTML = "<span class='facts-type facts-opinion'>" + myType + "</span>" + sheetData[i].info2;  
