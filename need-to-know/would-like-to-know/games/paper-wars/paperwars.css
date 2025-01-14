@@ -1,0 +1,80 @@
+@media (max-aspect-ratio: 4/3), (aspect-ratio: 4/3)
+{
+    .pw-sub-container {
+        width:100%;
+        height:90%;
+        background-color:black;
+        color:white;
+        text-align: left;
+        font-size: 50px;
+        overflow-y:scroll;
+    }
+    .pw-gui-container {
+        width:100%;
+        height:10%;
+    }
+    .pw-submit-button-div {
+        display:inline-block;
+        width:20%;
+        height:100%;
+    }
+    #pw-submit-button {
+        width:100%;
+        height: 100%;
+        font-weight: bold;
+        font-stretch: condensed;
+        font-size:5vw;
+    }
+    .pw-input-bar {
+        display:inline-block;
+        width:80%;
+        height:100%;
+    }
+    #pw-input-bar {
+        width:100%;
+        height:90%;
+        position:relative;
+        top:-0.1vw;
+        font-size: 5vw;
+    }
+}
+
+@media (min-aspect-ratio: 4/3) 
+{
+    .pw-sub-container {
+        width:100%;
+        height:90%;
+        background-color:black;
+        color:white;
+        text-align: left;
+        font-size: 50px;
+        overflow-y:scroll;
+    }
+    .pw-gui-container {
+        width:100%;
+        height:10%;
+    }
+    .pw-submit-button-div {
+        display:inline-block;
+        width:15%;
+        height:100%;
+    }
+    #pw-submit-button {
+        width:100%;
+        height: 100%;
+        font-weight: bold;
+        font-size:2vw;
+    }
+    .pw-input-bar {
+        display:inline-block;
+        width:85%;
+        height:100%;
+    }
+    #pw-input-bar {
+        width:100%;
+        height:90%;
+        position:relative;
+        top:-0vw;
+        font-size: 2vw;
+    }
+}
