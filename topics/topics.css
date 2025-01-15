@@ -95,7 +95,7 @@
     .coverage-storybox
     {
         width:500px;
-        background-image: linear-gradient(to right, #ffffff, #d2d2d2);
+        
         margin-top: 30px;
         margin-bottom: 30px;
         margin-left:40px;
@@ -240,7 +240,7 @@
     .coverage-storybox
     {
         width:250px;
-        background-image: linear-gradient(to right, #ffffff, #d2d2d2);
+        
         margin-top: 30px;
         margin-bottom: 30px;
         margin-left:20px;
@@ -258,7 +258,8 @@
     }
     .coverage-story-title
     {
-        font-size: 20px;
+        font-size: 23px;
+        line-height: 22px;
         font-weight: bold;
         font-stretch: condensed;
     }
