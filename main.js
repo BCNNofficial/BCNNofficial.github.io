@@ -18,6 +18,18 @@ function HomePageStuff()
             var storyContainer = document.createElement("div");
             storyLink.appendChild(storyContainer);
             storyContainer.classList.add("home-latest-story-container");
+            if (sheetData[i].type == "STORY") {
+                storyContainer.classList.add("box-story")
+            }
+            if (sheetData[i].type == "LIST") {
+                storyContainer.classList.add("box-list")
+            }
+            if (sheetData[i].type == "QUIZ") {
+                storyContainer.classList.add("box-quiz")
+            }
+            if (sheetData[i].type == "GAME") {
+                storyContainer.classList.add("box-game")
+            }
 
             var storySubContainer = document.createElement("div");
             storyContainer.appendChild(storySubContainer);
