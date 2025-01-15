@@ -49,6 +49,20 @@
 	font-stretch: expanded;
 	src: url(fonts/ARIBLK.TTF);
 }
+
+.box-story {
+	background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+}
+.box-list {
+	background-image: linear-gradient(to right, rgb(224, 251, 223), rgb(190, 230, 190));
+}
+.box-quiz {
+	background-image: linear-gradient(to right, #f5f6e2, rgb(222, 231, 200));
+}
+.box-game {
+	background-image: linear-gradient(to right, rgb(230, 201, 228), rgb(222, 200, 220));
+}
+
 body 
 {
 	font-family: Choice;
@@ -458,7 +472,7 @@ div.title a
 	}
 	.end-storybox
 	{
-		background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+		
 		width:85%;
 		margin:auto;
 		margin-top: 50px;
@@ -583,7 +597,7 @@ div.title a
 	}
 	.end-storybox
 	{
-		background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+		
 		width:18%;
 		margin-top: 50px;
 		margin-left: 25px;
