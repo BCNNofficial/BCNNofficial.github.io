@@ -93,6 +93,18 @@ function InitiateKnower()
                     var coverageStoryBox = document.createElement("div");
                     coverageStoryLink.appendChild(coverageStoryBox);
                     coverageStoryBox.classList.add("coverage-storybox");
+                    if (sheetData2[j].type == "STORY") {
+                        coverageStoryBox.classList.add("box-story")
+                    }
+                    if (sheetData2[j].type == "LIST") {
+                        coverageStoryBox.classList.add("box-list")
+                    }
+                    if (sheetData2[j].type == "QUIZ") {
+                        coverageStoryBox.classList.add("box-quiz")
+                    }
+                    if (sheetData2[j].type == "GAME") {
+                        coverageStoryBox.classList.add("box-game")
+                    }
 
                     var coverageStorySub = document.createElement("div");
                     coverageStoryBox.appendChild(coverageStorySub);
