@@ -3,20 +3,12 @@ var ourCoverage = [];
 function InitiateKnower()
 {
     $(".coverage-box").remove();
-    $(".no-results").remove();
 
     var container = document.getElementById("know-container");
     var searchBar = document.getElementById("Title");
     var searchfor = searchBar.value;
-    if(searchfor != "")
-    {
-        searchfor = titleCase(searchfor)
-        tempStor = searchfor; //console.log(tempStor);
-        searchfor = EarthHyphen(searchfor); //console.log(searchfor == undefined);
-        if (searchfor == undefined) {searchfor = tempStor}
-        var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
-    }
-    console.log(queryString);
+    searchfor = searchfor.toUpperCase();
+    var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
 
     function sheetDataHandler(sheetData)
     {
@@ -29,7 +21,6 @@ function InitiateKnower()
         }
         for (var i = 0; i < sheetData.length; i++)
         {
-            
             var coverageBox = document.createElement("div");
             container.appendChild(coverageBox);
             coverageBox.classList.add("coverage-box");
@@ -39,25 +30,20 @@ function InitiateKnower()
             coverageBox.appendChild(coverageSubBox);
             coverageSubBox.classList.add("coverage-sub");
 
-            var coverageImgDiv = document.createElement("div");
-            coverageSubBox.appendChild(coverageImgDiv);
-            coverageImgDiv.classList.add("coverage-img-div");
-            coverageImgDiv.innerHTML = "<img class='coverage-img' src='"+sheetData[i].img_link+"'><br>"+sheetData[i].disclaimer;
-
             var coverageTitle = document.createElement("div");
             coverageSubBox.appendChild(coverageTitle);
             coverageTitle.classList.add("coverage-title");
-            coverageTitle.innerHTML = "<a href='"+sheetData[i].link+"'>TOPIC: " + sheetData[i].name + "</a>";
+            coverageTitle.innerHTML = sheetData[i].name;
 
             var coverageDesc = document.createElement("div");
             coverageSubBox.appendChild(coverageDesc);
             coverageDesc.classList.add("coverage-desc");
-            coverageDesc.innerHTML = sheetData[i].first_paragraph;
+            coverageDesc.innerHTML = sheetData[i].description;
 
             var coverageStoryTop = document.createElement("div");
             coverageSubBox.appendChild(coverageStoryTop);
             coverageStoryTop.classList.add("coverage-story-top")
-            coverageStoryTop.innerHTML = "CHECK OUT STORIES RELATED TO THIS TOPIC"
+            coverageStoryTop.innerHTML = "CHECK OUT STORIES RELATED TO THIS COVERAGE"
 
             var coverageStoryContainer = document.createElement("div");
             coverageSubBox.appendChild(coverageStoryContainer);
@@ -66,14 +52,14 @@ function InitiateKnower()
             var coverageStoryUpContainer = document.createElement("div");
             coverageStoryContainer.appendChild(coverageStoryUpContainer);
             coverageStoryUpContainer.classList.add("coverage-story-up")
-            coverageStoryUpContainer.setAttribute("id", sheetData[i].finder);
+            coverageStoryUpContainer.setAttribute("id", sheetData[i].topic);
 
             function sheetDataHandler2(sheetData2)
             {
-                console.log(sheetData2)
                 for (var j = 0; j < sheetData2.length; j++)
                 {
-                    var thisContainer = document.getElementById(sheetData2[0].finder);
+                    console.log(sheetData2[0].topic);
+                    var thisContainer = document.getElementById(sheetData2[0].topic);
     
                     if ((window.innerWidth * 3 / 4) > (window.innerHeight))
                     {
@@ -93,6 +79,7 @@ function InitiateKnower()
                     var coverageStoryBox = document.createElement("div");
                     coverageStoryLink.appendChild(coverageStoryBox);
                     coverageStoryBox.classList.add("coverage-storybox");
+
                     if (sheetData2[j].type == "STORY") {
                         coverageStoryBox.classList.add("box-story")
                     }
@@ -144,7 +131,7 @@ function InitiateKnower()
     if (searchfor != "")
     {
         getSheetData({
-            sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+            sheetID: "1pXrpCHUi0JTAlExJ_Q13ORWu43PD86J55TAPj7v5NAU",
             sheetName: "All",
             query: queryString,
             callback: sheetDataHandler,
@@ -153,7 +140,7 @@ function InitiateKnower()
     else
     {
         getSheetData({
-            sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+            sheetID: "1pXrpCHUi0JTAlExJ_Q13ORWu43PD86J55TAPj7v5NAU",
             sheetName: "All",
             query: "SELECT *",
             callback: sheetDataHandler,
@@ -172,50 +159,3 @@ function PlaceEnterListener()
         }
     })
 }
-
-//from https://stackoverflow.com/questions/32589197/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string-using-javascript
-function titleCase(str) {
-    var splitStr = str.toLowerCase().split(' ');
-    for (var i = 0; i < splitStr.length; i++) {
-        // You do not need to check if i is larger than splitStr length, as your for does that for you
-        // Assign it back to the array
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-    }
-    // Directly return the joined string
-    return splitStr.join(' '); 
- }
- 
- function EarthHyphen(str)
- {
-    for (var i = 1; i <= 8; i++)
-    {
-        var nameCheck = "Earth " + i;
-        if (nameCheck == str)
-        {
-            return ("Earth-"+i);
-            break;
-        }
-    }
-    numberWord = ["one","two","three","four","five","six","seven","eight"]
-    numberWordCap = ["One","Two","Three","Four","Five","Six","Seven","Eight"]
-    for (var i = 0; i < 8; i++)
-    {
-        var nameCheck = "Earth " + numberWordCap[i];
-        if(nameCheck == str)
-        {
-            var myNum = i+1;
-            return ("Earth-"+myNum);
-            break;
-        }
-    }
-    for (var i = 0; i < 8; i++)
-        {
-            var nameCheck = "Earth-" + numberWord[i];
-            if(nameCheck == str)
-            {
-                var myNum = i+1;
-                return ("Earth-"+myNum);
-                break;
-            }
-        }
- }
