@@ -1,1 +1,28 @@
-saresaersraessersaers
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BCNN: Would Like to Know</title>
+<link href="/bcnn.css" rel="stylesheet" type="text/css">
+<link href="/need-to-know/would-like-to-know/games/games.css" rel="stylesheet" type="text/css">
+<link href="/need-to-know/would-like-to-know/games/paper-wars/paperwars.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="totalinformer">
+		<div class="game-title"></div>
+        <div class="game-container">
+            <div class="game-start-button" id="start-button">START</div>
+        </div>
+        <div class="game-description"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
+	<script src="/need-to-know/would-like-to-know/games/games.js"></script>
+    <script src="/need-to-know/would-like-to-know/games/paper-wars/paperwars.js"></script>
+	<script>
+        document.getElementById("start-button").setAttribute("onclick", "activateGame()");
+        loadMaterials("Paper Wars", "1dR7ma0cqQktDkhCkweNnvXlhxEdTe1o7N5D0hFYh4fw");
+		Initiate();
+	</script>
+</body>
+</html>
