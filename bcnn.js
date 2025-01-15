@@ -520,24 +520,39 @@ function ReturnRandomNews(myDataSheet) {
 	proclaimer.innerHTML="CHECK OUT MORE BCNN STORIES JUST FOR YOU";
 
 	var numOfStories = 4;
-	for (var i = 0; i < numOfStories; i++)
+
+	function GenerateStory(sheetData)
 	{
-		var storyBoxLink = document.createElement("a");
-		endStoryClassContainer.appendChild(storyBoxLink);
-		storyBoxLink.setAttribute('id', "myStrLnk"+i);
-
-		var storyBox = document.createElement("div");
-		storyBoxLink.appendChild(storyBox);
-		storyBox.classList.add("end-storybox");
-
-		var storySub = document.createElement("div");
-		storyBox.appendChild(storySub);
-		storySub.classList.add("end-storybox-subcontainer"); 
-		storySub.setAttribute('id', "myStrBox"+i)
-
-		function GenerateStory(sheetData)
+		for (var i = 0; i < numOfStories; i++)
 		{
+			var storyBoxLink = document.createElement("a");
+			endStoryClassContainer.appendChild(storyBoxLink);
+			storyBoxLink.setAttribute('id', "myStrLnk"+i);
+
+			var storyBox = document.createElement("div");
+			storyBoxLink.appendChild(storyBox);
+			storyBox.classList.add("end-storybox");
+
+			var storySub = document.createElement("div");
+			storyBox.appendChild(storySub);
+			storySub.classList.add("end-storybox-subcontainer"); 
+			storySub.setAttribute('id', "myStrBox"+i)
+			
 			var randVal = Math.floor(Math.random() * sheetData.length);
+
+			if (sheetData[randVal].type == "STORY") {
+				storyBox.classList.add("box-story")
+			}
+			if (sheetData[randVal].type == "LIST") {
+				storyBox.classList.add("box-list")
+			}
+			if (sheetData[randVal].type == "QUIZ") {
+				storyBox.classList.add("box-quiz")
+			}
+			if (sheetData[randVal].type == "GAME") {
+				storyBox.classList.add("box-game")
+			}
+
 			var desiredID = "myStrBox"+StoryNum;
 			//console.log(desiredID);
 			var thisSub = document.getElementById(desiredID);
@@ -566,14 +581,14 @@ function ReturnRandomNews(myDataSheet) {
 
 			StoryNum++;
 		}
-
-		getSheetData({
-			sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
-			sheetName: "All",
-			query: 'SELECT *',
-			callback: GenerateStory,
-		});
 	}
+
+	getSheetData({
+		sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+		sheetName: "All",
+		query: 'SELECT *',
+		callback: GenerateStory,
+	});
 
 	var ourBottomMenu = document.createElement("div");
 		totalContainer.appendChild(ourBottomMenu);
@@ -783,6 +798,18 @@ function FillWithStories (myID, mySheet)
 			var storyBox = document.createElement("div");
 			storyBoxLink.appendChild(storyBox);
 			storyBox.classList.add("end-storybox");
+			if (sheetData[i].type == "STORY") {
+                storyBox.classList.add("box-story")
+            }
+            if (sheetData[i].type == "LIST") {
+                storyBox.classList.add("box-list")
+            }
+            if (sheetData[i].type == "QUIZ") {
+                storyBox.classList.add("box-quiz")
+            }
+            if (sheetData[i].type == "GAME") {
+                storyBox.classList.add("box-game")
+            }
 
 			var storySub = document.createElement("div");
 			storyBox.appendChild(storySub);
