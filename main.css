@@ -316,7 +316,7 @@
     .home-latest-story-container
     {
         width:500px;
-        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+        
         border: 4px solid #000000;
         margin-left: 50px;
         margin-right: 50px;
@@ -669,17 +669,18 @@
     }
     .home-latest-stories-subsubcontainer
     {
-        
+        width:90%;
+        margin:auto;
     }
     .home-latest-story-container
     {
-        width:14.397vw;
-        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
-        border: 4px solid #000000;
-        margin-left: 1.5vw;
-        margin-right: 1.5vw;
+        width:13.9vw;
+        
+        border: 0.2vw solid #000000;
+        margin-left: 0.8vw;
+        margin-right: 0.8vw;
         margin-top: 30px;
-        display:inline-block;
+        display:inline-flex;
     }
     .home-lastest-story-subcontainer
     {
