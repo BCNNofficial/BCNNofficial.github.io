@@ -58,7 +58,7 @@ function sampleQuizLoader() {
     quizFrontContainer.classList.add("quiz-front-container");
 
     var quizTopic = document.createElement("div");
-    quizTopicContainer.appendChild(quizTopic);
+    quizTopicContainer.appoendChild(quizTopic);
     quizTopic.classList.add("quiz-topic");
     quizTopic.innerHTML = "<a hre=''>Earth-u23823</a>";
 
@@ -244,6 +244,17 @@ function loadQuizInfo (storyName, sheetLink) {
                 quizImgContainer.classList.add("quiz-front-img-container");
                 quizImgContainer.innerHTML = "<img class='quiz-img-front' src='"+sheetData[i].info4+"' alt='"+sheetData[i].info5+"'>";
 
+                var quizImgCaption = document.createElement("div");
+                quizImgContainer.appendChild(quizImgCaption);
+                quizImgCaption.classList.add("quiz-img-caption");
+                quizImgCaption.innerHTML = sheetData[i].info6;
+                console.log("sheetData[i].info9 != 'NONE: ' " + sheetData[i].info9 != "NONE");
+                if (sheetData[i].info9 != "NONE")
+                {
+                    console.log("entered?")
+                    quizImgCaption.innerHTML += "<sup style=\"font-size:70%\"><span class='footnote' id='ftn"+i+"' onclick=\"FootNote('ftn"+i+"','"+sheetData[i].info9+"');\">["+1+"]</span></sup>";
+                }
+
                 /*var quizStartButton = document.createElement("div");
                 quizFrontContainer.appendChild(quizStartButton);
                 quizStartButton.classList.add("quiz-start-button");
@@ -254,7 +265,7 @@ function loadQuizInfo (storyName, sheetLink) {
                 var quizTopic = document.createElement("div");
                 quizTopicContainer.appendChild(quizTopic);
                 quizTopic.classList.add("quiz-topic");
-                quizTopic.innerHTML = "<a hre='"+sheetData[i].info3+"'>"+sheetData[i].info2+"</a>";
+                quizTopic.innerHTML = "<a href='"+sheetData[i].info3+"'>"+sheetData[i].info2+"</a>";
             }
             if (myRow == "COMSEC") {
                 var mycomseclink = document.createElement("div");
