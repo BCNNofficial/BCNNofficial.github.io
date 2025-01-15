@@ -1,259 +1,221 @@
-@charset "utf-8";
-@media (max-aspect-ratio:4/3), (aspect-ratio:4/3)
+var ourCoverage = [];
+
+function InitiateKnower()
 {
-    #search-section
+    $(".coverage-box").remove();
+    $(".no-results").remove();
+
+    var container = document.getElementById("know-container");
+    var searchBar = document.getElementById("Title");
+    var searchfor = searchBar.value;
+    if(searchfor != "")
     {
-        width:90%;
-        margin:auto;
-        background-image: linear-gradient(to right, #a9bffc, #9ab5ff);
-        border:6px solid #000000;
-        text-align: center;
-        font-size: 35px;
-        font-weight: bold;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        searchfor = titleCase(searchfor)
+        tempStor = searchfor; //console.log(tempStor);
+        searchfor = EarthHyphen(searchfor); //console.log(searchfor == undefined);
+        if (searchfor == undefined) {searchfor = tempStor}
+        var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
     }
-    #search-bar-div
+    console.log(queryString);
+
+    function sheetDataHandler(sheetData)
     {
-        display:inline-block;
-        width:100%;
-        margin:20px;
+        if (sheetData.length<1)
+        {
+            var noResults = document.createElement("div");
+            container.appendChild(noResults);
+            noResults.innerHTML = "&ensp;Bust. Your search turned up no results.";
+            noResults.classList.add("no-results");
+        }
+        for (var i = 0; i < sheetData.length; i++)
+        {
+            
+            var coverageBox = document.createElement("div");
+            container.appendChild(coverageBox);
+            coverageBox.classList.add("coverage-box");
+            coverageBox.setAttribute("style", "background-image: linear-gradient(to right, "+sheetData[i].color+", "+sheetData[i].color2+");");
+
+            var coverageSubBox = document.createElement("div");
+            coverageBox.appendChild(coverageSubBox);
+            coverageSubBox.classList.add("coverage-sub");
+
+            var coverageImgDiv = document.createElement("div");
+            coverageSubBox.appendChild(coverageImgDiv);
+            coverageImgDiv.classList.add("coverage-img-div");
+            coverageImgDiv.innerHTML = "<img class='coverage-img' src='"+sheetData[i].img_link+"'><br>"+sheetData[i].disclaimer;
+
+            var coverageTitle = document.createElement("div");
+            coverageSubBox.appendChild(coverageTitle);
+            coverageTitle.classList.add("coverage-title");
+            coverageTitle.innerHTML = "<a href='"+sheetData[i].link+"'>TOPIC: " + sheetData[i].name + "</a>";
+
+            var coverageDesc = document.createElement("div");
+            coverageSubBox.appendChild(coverageDesc);
+            coverageDesc.classList.add("coverage-desc");
+            coverageDesc.innerHTML = sheetData[i].first_paragraph;
+
+            var coverageStoryTop = document.createElement("div");
+            coverageSubBox.appendChild(coverageStoryTop);
+            coverageStoryTop.classList.add("coverage-story-top")
+            coverageStoryTop.innerHTML = "CHECK OUT STORIES RELATED TO THIS TOPIC"
+
+            var coverageStoryContainer = document.createElement("div");
+            coverageSubBox.appendChild(coverageStoryContainer);
+            coverageStoryContainer.classList.add("coverage-story-container")
+
+            var coverageStoryUpContainer = document.createElement("div");
+            coverageStoryContainer.appendChild(coverageStoryUpContainer);
+            coverageStoryUpContainer.classList.add("coverage-story-up")
+            coverageStoryUpContainer.setAttribute("id", sheetData[i].finder);
+
+            function sheetDataHandler2(sheetData2)
+            {
+                console.log(sheetData2)
+                for (var j = 0; j < sheetData2.length; j++)
+                {
+                    var thisContainer = document.getElementById(sheetData2[0].finder);
+    
+                    if ((window.innerWidth * 3 / 4) > (window.innerHeight))
+                    {
+                        var myWidth = sheetData2.length * 300 + 40;
+                        thisContainer.setAttribute("style", "width: "+myWidth+"px");
+                    }
+                    else
+                    {
+                        var myWidth = sheetData2.length * 590 + 50;
+                        thisContainer.setAttribute("style", "width: "+myWidth+"px");
+                    }
+
+                    var coverageStoryLink = document.createElement("a");
+                    thisContainer.appendChild(coverageStoryLink);
+                    coverageStoryLink.setAttribute("href",sheetData2[j].link)
+
+                    var coverageStoryBox = document.createElement("div");
+                    coverageStoryLink.appendChild(coverageStoryBox);
+                    coverageStoryBox.classList.add("coverage-storybox");
+                    if (sheetData2[j].type == "STORY") {
+                        coverageStoryBox.classList.add("box-story")
+                    }
+                    if (sheetData2[j].type == "LIST") {
+                        coverageStoryBox.classList.add("box-list")
+                    }
+                    if (sheetData2[j].type == "QUIZ") {
+                        coverageStoryBox.classList.add("box-quiz")
+                    }
+                    if (sheetData2[j].type == "GAME") {
+                        coverageStoryBox.classList.add("box-game")
+                    }
+
+                    var coverageStorySub = document.createElement("div");
+                    coverageStoryBox.appendChild(coverageStorySub);
+                    coverageStorySub.classList.add("coverage-story-sub");
+
+                    var coverageStoryTitle = document.createElement("div");
+                    coverageStorySub.appendChild(coverageStoryTitle);
+                    coverageStoryTitle.classList.add("coverage-story-title");
+                    coverageStoryTitle.innerHTML = sheetData2[j].name;
+
+                    var coverageStoryDate = document.createElement("div");
+                    coverageStorySub.appendChild(coverageStoryDate);
+                    coverageStoryDate.classList.add("coverage-story-date");
+                    coverageStoryDate.innerHTML = sheetData2[j].date;
+
+                    var coverageStoryImg = document.createElement("div");
+                    coverageStorySub.appendChild(coverageStoryImg);
+                    coverageStoryImg.classList.add("coverage-story-img-div");
+                    coverageStoryImg.innerHTML = "<img class='coverage-story-img' src='"+sheetData2[j].img_link+"' alt='"+sheetData2[j].alt+"'>";
+
+                    var coverageStoryDisc = document.createElement("div");
+                    coverageStorySub.appendChild(coverageStoryDisc);
+                    coverageStoryDisc.classList.add("coverage-story-disc");
+                    coverageStoryDisc.innerHTML = sheetData2[j].disclaimer;
+                }
+            }
+
+            getSheetData({
+                sheetID: "1fWIH-9n4cbj2R6sSWUmsjCw2d00Ues2_jRdMAToMFZk",
+                sheetName: sheetData[i].name,
+                query: "SELECT *",
+                callback: sheetDataHandler2,
+            });
+        }
     }
-    #search-button-div
+
+    if (searchfor != "")
     {
-        display:inline-block;
-        width:20%;
-        margin:20px;
-    }
-    #Title
+        getSheetData({
+            sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+            sheetName: "All",
+            query: queryString,
+            callback: sheetDataHandler,
+        });
+    }  
+    else
     {
-        font-size: 35px;
-        font-weight: bold;
-        width:500px;
-    }
-    #search-button
-    {
-        font-size: 35px;
-        font-weight: bold;
-    }
-    .coverage-box
-    {
-        width:80%;
-        margin:auto;
-        border:6px solid #000000;
-        margin-top: 75px;
-        margin-bottom: 75px;
-    }
-    .coverage-sub
-    {
-        width:95%;
-        margin:auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .coverage-title
-    {
-        font-size: 50px;
-        font-weight: bold;
-        font-stretch: condensed;
-    }
-    .coverage-desc
-    {
-        font-size: 25px;
-        margin-top: 10px;
-    }
-    .coverage-story-top
-    {
-        font-size: 38px;
-        font-weight: bold;
-        font-style: italic;
-        margin-top: 40px;
-    }
-    .coverage-story-container
-    {
-        background-color: rgba(0,0,0,0.1);
-        border:4px solid #000000;
-        overflow-x: scroll;
-    }
-    .coverage-storybox
-    {
-        width:500px;
-        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
-        margin-top: 30px;
-        margin-bottom: 30px;
-        margin-left:40px;
-        margin-right: 40px;
-        border: 5px solid #000000;
-        display:inline-block;
-        color:black;
-    }
-    .coverage-story-sub
-    {
-        width:95%;
-        margin:auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .coverage-story-title
-    {
-        font-size: 30px;
-        font-weight: bold;
-        font-stretch: condensed;
-    }
-    .coverage-story-date
-    {
-        color:gray;
-        font-size: 20px;
-        font-stretch: condensed;
-    }
-    .coverage-story-img-div
-    {
-        width:98%;
-        margin:auto;
-    }
-    .coverage-story-img
-    {
-        width:100%;
-        border:2px solid gray;
-    }
-    .coverage-story-disc
-    {
-        color:gray;
-    }
-    .no-results
-    {
-        text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        color:gray;
+        getSheetData({
+            sheetID: "1Fz7QJy7ek0xH8D8HoGACmjHoJnMUdFG4tZhfIO_onag",
+            sheetName: "All",
+            query: "SELECT *",
+            callback: sheetDataHandler,
+        });
     }
 }
-@media (min-aspect-ratio:4/3)
+
+function PlaceEnterListener() 
 {
-    #search-section
-    {
-        width:90%;
-        margin:auto;
-        background-image: linear-gradient(to right, #a9bffc, #9ab5ff);
-        border:6px solid #000000;
-        text-align: center;
-        font-size: 35px;
-        font-weight: bold;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    #search-bar-div
-    {
-        display:inline-block;
-        width:50%;
-        margin:20px;
-    }
-    #search-button-div
-    {
-        display:inline-block;
-        width:20%;
-        margin:20px;
-    }
-    #Title
-    {
-        font-size: 35px;
-        font-weight: bold;
-        width:500px;
-    }
-    #search-button
-    {
-        font-size: 35px;
-        font-weight: bold;
-    }
-    .coverage-box
-    {
-        width:80%;
-        margin:auto;
-        border:6px solid #000000;
-        margin-top: 75px;
-        margin-bottom: 75px;
-    }
-    .coverage-sub
-    {
-        width:95%;
-        margin:auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .coverage-title
-    {
-        font-size: 40px;
-        font-weight: bold;
-        font-stretch: condensed;
-    }
-    .coverage-desc
-    {
-        font-size: 18px;
-        margin-top: 10px;
-    }
-    .coverage-story-top
-    {
-        font-size: 35px;
-        font-weight: bold;
-        font-style: italic;
-        margin-top: 40px;
-    }
-    .coverage-story-container
-    {
-        background-color: rgba(0,0,0,0.1);
-        border:4px solid #000000;
-        overflow-x: scroll;
-    }
-    .coverage-storybox
-    {
-        width:250px;
-        background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
-        margin-top: 30px;
-        margin-bottom: 30px;
-        margin-left:20px;
-        margin-right: 20px;
-        border: 5px solid #000000;
-        display:inline-block;
-        color:black;
-    }
-    .coverage-story-sub
-    {
-        width:95%;
-        margin:auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .coverage-story-title
-    {
-        font-size: 20px;
-        font-weight: bold;
-        font-stretch: condensed;
-    }
-    .coverage-story-date
-    {
-        color:gray;
-        font-size: 15px;
-        font-stretch: condensed;
-    }
-    .coverage-story-img-div
-    {
-        width:98%;
-        margin:auto;
-    }
-    .coverage-story-img
-    {
-        width:100%;
-        border:2px solid gray;
-    }
-    .coverage-story-disc
-    {
-        color:gray;
-    }
-    .no-results
-    {
-        text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        color:gray;
-    }
+    console.log("is this even being accessed?")
+    $(document).on("keypress", "#Title", function (e) {
+        console.log("is THIS being accessed?");
+        if (e.key == 'Enter') 
+        {
+            InitiateKnower();
+        }
+    })
 }
+
+//from https://stackoverflow.com/questions/32589197/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string-using-javascript
+function titleCase(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        // You do not need to check if i is larger than splitStr length, as your for does that for you
+        // Assign it back to the array
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+    }
+    // Directly return the joined string
+    return splitStr.join(' '); 
+ }
+ 
+ function EarthHyphen(str)
+ {
+    for (var i = 1; i <= 8; i++)
+    {
+        var nameCheck = "Earth " + i;
+        if (nameCheck == str)
+        {
+            return ("Earth-"+i);
+            break;
+        }
+    }
+    numberWord = ["one","two","three","four","five","six","seven","eight"]
+    numberWordCap = ["One","Two","Three","Four","Five","Six","Seven","Eight"]
+    for (var i = 0; i < 8; i++)
+    {
+        var nameCheck = "Earth " + numberWordCap[i];
+        if(nameCheck == str)
+        {
+            var myNum = i+1;
+            return ("Earth-"+myNum);
+            break;
+        }
+    }
+    for (var i = 0; i < 8; i++)
+        {
+            var nameCheck = "Earth-" + numberWord[i];
+            if(nameCheck == str)
+            {
+                var myNum = i+1;
+                return ("Earth-"+myNum);
+                break;
+            }
+        }
+ }
