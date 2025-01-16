@@ -16,7 +16,7 @@ function FindStories ()
     //console.log(topicValue);
     console.log(typeof titleSearch, typeof topicValue);
 
-    var queryString = "SELECT * WHERE B contains \""+titleSearch+"\"";
+    var queryString = "SELECT * WHERE C contains \""+titleSearch+"\"";
 
     function InputNews(sheetData) {
         if (sheetData.length < 1)
