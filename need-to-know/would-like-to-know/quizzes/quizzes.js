@@ -288,6 +288,9 @@ function loadQuizInfo (storyName, sheetLink) {
 function initializeQuizData () {
     $('document').ready(function () {
 
+        var comseclinkdiv = document.getElementsByClassName("comsec-link")[0];
+        comseclink = comseclinkdiv.innerHTML;
+
         var qCounter = 0;
         while (true) {
             qCounter++;
