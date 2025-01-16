@@ -174,7 +174,8 @@
     }
     .wltk-story-img-container {
         width:99%;
-        border:3px solid rgb(88, 88, 88)
+        border:3px solid rgb(88, 88, 88);
+        font-size:0px;
     }
     .wltk-story-img {
         width:100%;
@@ -186,6 +187,8 @@
     }
     .wltk-story-desc {
         color:black;
-        font-size:17px
+        font-size:17px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
