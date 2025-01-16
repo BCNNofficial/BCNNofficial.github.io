@@ -4,16 +4,22 @@
 <meta charset="utf-8">
 <title>BCNN: Would Like to Know</title>
 <link href="/bcnn.css" rel="stylesheet" type="text/css">
-<link href="/need-to-know/need-to-know.css" rel="stylesheet" type="text/css">
+<link href="/need-to-know/would-like-to-know/would-like-to-know.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="totalinformer">
 		<div class="title_text">Would Like to Know</div>
-		<div class="informers">Here at BCNN, we know that there are things you need to know, but also things you would like to know.<br><br></div>
-		<div class="informers">However we also know that what you want is the exact same thing as what you need. Thus we have provided an alternative page to search for what you need to know so you can reflect this fact in your everyday life.<br><br></div>
+		<div class="informers">Here at BCNN, we know that there are things you need to know, but also things you would like to know. And both are pivotal to your well being. This is why we put significant effort into providing both, and the purpose of this page is to satisfy the latter.<br><br></div>
+		<div class="informers">It is here that you can find our informative and comprehensive lists, which reflects the facts and opinions of our world, food reviews from our award-winning reviewers, opinion pieces with all the right opinions, hilarious and thought-provoking quizzes, and games to keep you stimulated and strong. Search below to get started and see everything that you would have ever liked to know.<br><br></div>
         <div id="search-section">
 			<div id="search-bar-div">
 				<label for="Title">Name:</label><input type="text" id="Title" name="Title" placeholder="Leave blank to search for all">
+			</div>
+			<div class="wltk-chooser-container">
+				<label for="wltk-chooser">Category:</label>
+				<select name="wltk-chooser" id="wltk-chooser">
+					<option value="WLTK">All</option>
+				</select>
 			</div>
 			<div id="search-button-div">
 				<button id='search-button' type="button" onclick="InitiateKnower();">Search</button>
@@ -25,10 +31,11 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="/bcnn.js"></script> <!--In actual site link to https://bcnnofficial.github.io/bcnn.js not to bcnn.js-->
-	<script src="/need-to-know/need-to-know.js"></script>
+	<script src="/need-to-know/would-like-to-know/would-like-to-know.js"></script>
 	<script>
-		Initiate();
+		InitiateWouldLikeToKnow();
 		PlaceEnterListener();
+		Initiate();
 	</script>
 </body>
 </html>
