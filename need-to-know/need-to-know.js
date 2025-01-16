@@ -8,7 +8,7 @@ function InitiateKnower()
     var searchBar = document.getElementById("Title");
     var searchfor = searchBar.value;
     searchfor = searchfor.toUpperCase();
-    var queryString = "SELECT * WHERE C contains \""+searchfor+"\"";
+    var queryString = "SELECT * WHERE B contains \""+searchfor+"\"";
 
     function sheetDataHandler(sheetData)
     {
